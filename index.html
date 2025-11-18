@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR.PHARMA - Clinical Intelligence Platform</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --text-color: #1f2937;
+            --primary-color: #3b82f6;
+            --primary-hover-color: #2563eb;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --recommendations-bg: #ffffff;
+            --recommendations-text: #1f2937;
+            --recommendations-hover-bg: #e0f2fe;
+        }
+
+        /* Dark Theme Variables */
+        .dark-theme {
+            --bg-color: #1a202c;
+            --text-color: #e2e8f0;
+            --primary-color: #63b3ed;
+            --primary-hover-color: #4299e1;
+            --card-bg: #2d3748;
+            --border-color: #4a5568;
+            --recommendations-bg: #2d3748;
+            --recommendations-text: #e2e8f0;
+            --recommendations-hover-bg: #4a5568;
+        }
+        
+        .mint-theme { --bg-color: #e0f2f1; --text-color: #042f2e; --primary-color: #2dd4bf; --primary-hover-color: #14b8a6; --card-bg: #ffffff; --border-color: #99f6e4; --recommendations-bg: #ffffff; --recommendations-text: #042f2e; --recommendations-hover-bg: #e0f2f1; }
+        .purple-theme { --bg-color: #f3e8ff; --text-color: #4a044e; --primary-color: #a855f7; --primary-hover-color: #9333ea; --card-bg: #f8eefc; --border-color: #d8b4fe; --recommendations-bg: #ffffff; --recommendations-text: #4a044e; --recommendations-hover-bg: #f3e8ff; }
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-color: var(--border-color);
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover-color);
+            transform: scale(1.05);
+        }
+
+        /* Specific Elements */
+        #recommendations-container { background-color: var(--recommendations-bg); color: var(--recommendations-text); }
+        #recommendations-list li:hover { background-color: var(--recommendations-hover-bg); color: var(--recommendations-text); transform: translateX(4px); }
+        #recommendations-list li { color: var(--recommendations-text); transition: transform 0.2s, background-color 0.2s; }
+        
+        /* Animations */
+        .alphabet-link, .drug-link, .disease-link { transition: transform 0.2s ease-out, background-color 0.2s; }
+        .alphabet-link:hover { transform: scale(1.1); }
+        .drug-link:hover, .disease-link:hover { transform: translateX(4px); }
+        #theme-switcher-button svg { transition: transform 0.5s ease; }
+        #theme-switcher-button:hover svg { transform: rotate(90deg); }
+        .icon-heading { display: inline-flex; align-items: center; gap: 0.75rem; }
+        .icon-subheading { display: inline-flex; align-items: center; gap: 0.5rem; }
+        .icon-subheading .fa-fw { width: 1.1em; }
+
+        @keyframes pulse-light {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+            50% { box-shadow: 0 0 0 6px rgba(59, 130, 246, 0); }
+        }
+        .animate-pulse-light { animation: pulse-light 2s infinite; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+
+        @keyframes fadeInSlideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-slide-up { opacity: 0; animation: fadeInSlideUp 0.6s ease-out forwards; }
+
+        .skeleton { background-color: var(--border-color); opacity: 0.7; border-radius: 0.25rem; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 50% { opacity: 0.5; } }
+
+        #back-to-top-button {
+            position: fixed; bottom: 20px; right: 20px; background-color: var(--primary-color); color: white;
+            padding: 0.75rem; border-radius: 50%; display: none; z-index: 50;
+            transition: opacity 0.3s, transform 0.3s, background-color 0.3s; opacity: 0; transform: translateY(20px);
+        }
+        #back-to-top-button.show { display: block; opacity: 1; transform: translateY(0); }
+        #back-to-top-button:hover { background-color: var(--primary-hover-color); transform: scale(1.1); }
+
+        .writing-vertical { writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }
+
+        .quiz-btn-theme {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .quiz-btn-theme:hover {
+            border-color: var(--primary-color);
+            transform: translateX(4px);
+            background-color: color-mix(in srgb, var(--primary-color), transparent 90%);
+        }
+        .quiz-btn-theme .sub-text { color: var(--text-color); opacity: 0.6; }
+        
+        .perspective-1000 { perspective: 1000px; }
+    </style>
+</head>
+<body class="p-4 md:p-8 light-theme">
+
+    <header class="flex flex-wrap md:flex-nowrap justify-between items-center mb-8 md:mb-12">
+        <div class="text-3xl font-bold rounded-lg px-4 py-2">
+            DR.<span class="text-blue-500">PHARMA</span>
+        </div>
+
+        <div class="md:hidden flex items-center">
+            <button id="theme-switcher-button-mobile" class="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"></button>
+            <button id="mobile-menu-button" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <svg id="mobile-menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path></svg>
+                <svg id="mobile-menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <nav class="hidden md:flex flex-wrap gap-4 mt-4 md:mt-0">
+            <a href="#" class="text-sm font-medium hover:text-blue-500 transition-colors" data-section="home">Drugs A-Z</a>
+            <a href="#" class="text-sm font-medium hover:text-blue-500 transition-colors" data-section="interaction-checker-section">Interaction Matrix</a>
+            <a href="#" class="text-sm font-medium hover:text-blue-500 transition-colors" data-section="diseases-section">Diseases</a>
+            <a href="#" class="text-sm font-medium hover:text-blue-500 transition-colors" data-section="about-contact-section">
+                <i class="fa-solid fa-circle-info text-blue-500 mr-1"></i> About
+            </a>
+            <a href="#" class="text-sm font-medium hover:text-blue-500 transition-colors" data-section="quiz-section">
+                <i class="fa-solid fa-brain text-purple-500 mr-1"></i> Pharma Quiz
+            </a>
+        </nav>
+        
+        <div class="hidden md:block mt-4 md:mt-0">
+            <button id="theme-switcher-button-desktop" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <svg id="theme-icon" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"></svg>
+            </button>
+        </div>
+
+        <nav id="mobile-menu" class="hidden md:hidden w-full mt-4 flex flex-col gap-4 card border p-4 shadow-lg">
+            <a href="#" class="block p-2 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-section="home">Drugs A-Z</a>
+            <a href="#" class="block p-2 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-section="interaction-checker-section">Interaction Matrix</a>
+            <a href="#" class="block p-2 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-section="diseases-section">Diseases</a>
+            <a href="#" class="block p-2 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-section="about-contact-section">About & Contact</a>
+            <a href="#" class="block p-2 rounded-lg text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-section="quiz-section">
+                <i class="fa-solid fa-brain text-purple-500 mr-2"></i> Pharma Quiz
+            </a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto max-w-4xl px-2 md:px-0">
+        
+        <div id="home-content">
+            <section class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white shadow-2xl mb-8 p-8 md:p-12 border border-white/10">
+                <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+                    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 1s;"></div>
+                </div>
+
+                <div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="flex-1 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                            Clinical Intelligence V2.0
+                        </div>
+                        
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                            The Future of <br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Pharma Data</span>
+                        </h1>
+                        
+                        <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            DR.PHARMA redefines medical reference with a lightning-fast, responsive database. Access critical drug monographs, check complex interactions instantly, and validate clinical protocols.
+                        </p>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+                            <div onclick="document.getElementById('a-z-list-section').scrollIntoView({ behavior: 'smooth' })" class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-pills text-2xl text-blue-400 mb-2"></i>
+                                <div class="text-sm font-semibold text-slate-200">Drug Index</div>
+                            </div>
+                            <div onclick="showSection('diseases-section')" class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-virus-covid text-2xl text-purple-400 mb-2"></i>
+                                <div class="text-sm font-semibold text-slate-200">Pathology</div>
+                            </div>
+                            <div onclick="showSection('interaction-checker-section')" class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-shuffle text-2xl text-green-400 mb-2"></i>
+                                <div class="text-sm font-semibold text-slate-200">Interactions</div>
+                            </div>
+                            <div onclick="showSection('quiz-section')" class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer">
+                                <i class="fa-solid fa-brain text-2xl text-yellow-400 mb-2"></i>
+                                <div class="text-sm font-semibold text-slate-200">Quiz Mode</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hidden lg:block w-80 perspective-1000">
+                        <div class="relative w-full aspect-[4/5] bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-md rounded-3xl border border-white/20 p-6 shadow-2xl transform rotate-y-12 hover:rotate-y-0 transition-transform duration-700 ease-out group">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
+                            <div class="relative h-full flex flex-col justify-between">
+                                <div class="flex items-center justify-between">
+                                    <div class="w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center animate-pulse"><i class="fa-solid fa-heart-pulse text-red-400"></i></div>
+                                    <div class="px-2 py-1 rounded-md bg-green-500/20 text-green-400 text-xs font-mono border border-green-500/30">SYSTEM ACTIVE</div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="h-2 w-3/4 bg-slate-500/30 rounded-full"></div>
+                                    <div class="h-2 w-1/2 bg-slate-500/30 rounded-full"></div>
+                                    <div class="h-24 w-full bg-slate-800/50 rounded-xl mt-4 flex items-center justify-center border border-white/5 group-hover:border-blue-500/30 transition-colors">
+                                        <i class="fa-solid fa-chart-line text-4xl text-slate-500 group-hover:text-blue-400 transition-colors"></i>
+                                    </div>
+                                </div>
+                                <button onclick="document.getElementById('search-input').focus()" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-900/50 hover:shadow-blue-600/50 hover:-translate-y-1">
+                                    Start Analysis
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="search-section" class="bg-blue-500 text-white p-6 md:p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center text-center"> 
+                <h1 class="text-2xl md:text-4xl font-extrabold mb-4">Find reliable information about drugs.</h1>
+                <div class="w-full max-w-lg relative">
+                    <div class="flex flex-col md:flex-row gap-2">
+                        <input type="text" id="search-input" placeholder="Search for a drug, condition, or topic..." class="flex-grow w-full p-3 rounded-lg text-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform duration-300 focus:scale-105 animate-pulse-light">
+                        <button id="search-button" class="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors transform hover:scale-105 animate-pulse-light">Search</button>
+                    </div>
+                    <div id="recommendations-container" class="absolute z-50 w-full mt-2 rounded-lg shadow-lg border hidden">
+                        <ul id="recommendations-list"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="a-z-list-section" class="mt-8 md:mt-12">
+                <h2 class="text-2xl font-bold mb-4 md:mb-6 text-center md:text-left icon-heading">
+                    <i class="fa-solid fa-pills text-blue-500"></i>
+                    <span>Drugs A-Z</span>
+                </h2>
+                <div id="alphabet-nav-container" class="flex flex-wrap justify-center gap-1 mb-4 md:mb-6"></div>
+                <div id="drug-list-container"></div>
+            </section>
+        </div>
+
+        <section id="drug-details-section" class="mt-8 md:mt-12 hidden">
+            <button id="back-to-list-button" class="btn-primary text-white px-4 py-2 rounded-lg font-semibold mb-4 text-sm">
+                <i class="fa-solid fa-arrow-left mr-2"></i>Back
+            </button>
+            <div class="card p-6 rounded-xl border shadow-sm">
+                <div class="bg-red-100 border border-red-400 text-red-700 p-4 mb-6 rounded-lg" role="alert">
+                    <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Disclaimer:</p>
+                    <p class="text-sm">This information is for demonstration purposes only.</p>
+                </div>
+                <div id="drug-details-skeleton" class="hidden">
+                    <div class="w-1/2 h-8 skeleton mb-4"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-sm mb-6 border-b pb-4">
+                        <div><div class="w-3/4 h-5 skeleton"></div></div>
+                        <div><div class="w-2/3 h-5 skeleton"></div></div>
+                    </div>
+                    <div class="mb-6 space-y-2"><div class="w-full h-4 skeleton"></div><div class="w-3/4 h-4 skeleton"></div></div>
+                </div>
+                <div id="drug-details-content-wrapper">
+                    <button id="simplify-button" class="w-full btn-primary text-white px-4 py-2 rounded-lg font-semibold mb-4 text-sm transition-all duration-300 transform hover:scale-105 hidden">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Simplify This for Me
+                    </button>
+                    <div id="simple-summary-container" class="p-4 bg-blue-50 border-l-4 border-blue-400 text-blue-800 rounded-lg mb-6 hidden animate-fade-in-slide-up">
+                        <h4 class="font-bold text-lg mb-2 icon-subheading"><i class="fa-solid fa-user-doctor fa-fw"></i><span>Patient Summary</span></h4>
+                        <p id="simple-summary-text" class="text-sm"></p>
+                    </div>
+                    <div id="drug-details-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="diseases-section" class="mt-8 md:mt-12 hidden">
+            <h2 class="text-2xl font-bold mb-4 md:mb-6 text-center md:text-left icon-heading">
+                <i class="fa-solid fa-clipboard-list text-blue-500"></i>
+                <span>Disease Protocols</span>
+            </h2>
+             <div class="mb-6 relative"> 
+                <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="disease-search-input" placeholder="Search for a disease..." class="w-full p-3 pl-10 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 card border transition-transform duration-300 focus:scale-105">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="disease-grid-container"></div>
+        </section>
+
+        <section id="disease-details-section" class="mt-8 md:mt-12 hidden">
+            <button id="back-to-diseases-button" class="btn-primary text-white px-4 py-2 rounded-lg font-semibold mb-4 text-sm">
+                <i class="fa-solid fa-arrow-left mr-2"></i>Back
+            </button>
+             <div class="card p-6 rounded-xl border shadow-sm">
+                <div id="disease-details-skeleton" class="hidden">
+                    <div class="w-1/2 h-8 skeleton mb-4"></div>
+                    <div class="mb-6 space-y-2"><div class="w-full h-4 skeleton"></div></div>
+                </div>
+                <div id="disease-details-content"></div>
+            </div>
+        </section>
+
+        <section id="interaction-checker-section" class="mt-8 md:mt-12 hidden">
+            <h2 class="text-2xl font-bold mb-4 md:mb-6 text-center md:text-left icon-heading">
+                <i class="fa-solid fa-chess-board text-blue-500"></i>
+                <span>Live Interaction Analysis</span>
+            </h2>
+
+            <div class="card p-6 rounded-xl border shadow-sm">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Evidence-Based Safety Matrix</h3>
+                    <p class="text-sm text-gray-500 mb-4">Scans your database for direct contraindications, class-based risks, and precautionary warnings.</p>
+                </div>
+
+                <div class="max-w-xl mx-auto bg-gray-50 dark:bg-gray-700 p-4 rounded-lg mb-6">
+                    <div class="flex gap-2">
+                        <input type="text" id="matrix-input" placeholder="Type drug name (e.g. Simvastatin, Amiodarone)..." class="flex-grow p-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:outline-none dark:bg-gray-800 dark:border-gray-600 dark:text-white">
+                        <button id="matrix-add-btn" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors shadow-md">
+                            <i class="fa-solid fa-plus"></i> Add
+                        </button>
+                    </div>
+                    
+                    <div id="matrix-tag-container" class="flex flex-wrap gap-2 mt-4 min-h-[40px]">
+                        <span class="text-sm text-gray-400 italic self-center" id="matrix-empty-msg">Add medications to analyze safety profile...</span>
+                    </div>
+                    
+                    <button id="generate-matrix-btn" class="w-full mt-4 btn-primary text-white font-bold py-3 rounded-lg shadow-lg hidden transition-transform transform hover:scale-[1.02]">
+                        <i class="fa-solid fa-microscope mr-2"></i> Analyze Interactions
+                    </button>
+                </div>
+
+                <div id="matrix-container" class="hidden animate-fade-in-slide-up">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-center border-collapse text-sm">
+                            <thead id="matrix-head"></thead>
+                            <tbody id="matrix-body"></tbody>
+                        </table>
+                    </div>
+                    
+                    <div id="matrix-details" class="mt-8 space-y-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz-section" class="mt-8 md:mt-12 hidden">
+            <h2 class="text-2xl font-bold mb-4 md:mb-6 text-center md:text-left icon-heading">
+                <i class="fa-solid fa-brain text-purple-500"></i>
+                <span>Pharma Quiz Mode</span>
+            </h2>
+            
+            <div class="card p-6 rounded-xl border shadow-sm text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-purple-500"></div>
+
+                <div id="quiz-start-view" class="py-8">
+                    <div class="mb-6 flex justify-center">
+                        <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center animate-pulse-light">
+                            <i class="fa-solid fa-question text-4xl text-purple-500"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Test Your Clinical Knowledge</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-md mx-auto">
+                        Can you identify the medication based on its <strong>Indication</strong> or <strong>Mechanism of Action</strong>?
+                    </p>
+                    <button id="start-quiz-button" class="bg-purple-600 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-purple-700 transition-all transform hover:scale-105 shadow-lg">
+                        Start Quiz
+                    </button>
+                </div>
+
+                <div id="quiz-game-view" class="hidden text-left max-w-3xl mx-auto">
+                    <div class="flex justify-between items-center mb-4 text-sm text-gray-500">
+                        <span><i class="fa-solid fa-circle-question mr-1"></i> Clinical Question</span>
+                        <span id="quiz-score" class="font-bold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Score: 0</span>
+                    </div>
+
+                    <div class="mb-8 p-6 bg-blue-50 border-l-4 border-blue-500 text-blue-900 rounded-r-xl dark:bg-gray-700 dark:text-gray-100 dark:border-blue-400 shadow-sm">
+                        <h4 class="font-bold text-xs text-blue-400 dark:text-blue-300 uppercase tracking-wider mb-2">Identify the drug for:</h4>
+                        <p id="quiz-clue-text" class="text-lg md:text-xl font-medium leading-relaxed">Loading question...</p>
+                    </div>
+                    
+                    <div id="quiz-options-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        </div>
+
+                    <div id="quiz-feedback-container" class="hidden flex flex-col items-center animate-fade-in">
+                        <div id="quiz-feedback" class="w-full text-center p-4 rounded-lg mb-4 font-bold text-lg border"></div>
+                        <button id="next-question-button" class="btn-primary text-white px-8 py-3 rounded-lg font-bold shadow-md hover:shadow-lg transition-all transform hover:translate-x-1">
+                            Next Question <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-contact-section" class="mt-8 md:mt-12 hidden animate-fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="card p-8 rounded-3xl border shadow-lg relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-bl-full -mr-8 -mt-8"></div>
+                        <h2 class="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Revolutionizing Clinical Reference</h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                            DR.PHARMA is an advanced clinical intelligence prototype. By leveraging modern web technologies, we deliver instant access to drug monographs, interaction checkers, and disease protocols without the latency of traditional databases.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600"><i class="fa-solid fa-bolt"></i></div>
+                                <div><h4 class="font-bold">Zero Latency</h4><p class="text-sm text-gray-500">Local-first data architecture.</p></div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg text-purple-600"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div><h4 class="font-bold">Safety First</h4><p class="text-sm text-gray-500">Real-time interaction matrix.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="card p-6 rounded-3xl border shadow-lg text-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-b from-blue-500/5 to-transparent"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold">Ashwaq Hussain</h3>
+                            <p class="text-sm text-blue-500 font-medium mb-6">Lead Developer & Pharmacist</p>
+                            <div class="space-y-3">
+                                <a href="mailto:mulaashwaqhussain@gmail.com" class="flex items-center justify-center gap-3 w-full p-3 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors group">
+                                    <i class="fa-solid fa-envelope text-gray-400 group-hover:text-blue-500"></i>
+                                    <span class="text-sm font-medium">Email Me</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-8 md:mt-16 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>&copy; 2025 DR.PHARMA Prototype. For informational purposes only. Consult a healthcare professional.</p>
+        <div class="mt-2 flex flex-col items-center space-y-1">
+            <a href="#" class="hover:underline" data-section="about-contact-section">About & Contact</a>
+        </div>
+    </footer>
+
+    <a href="#" id="back-to-top-button" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <button id="global-back-button" class="fixed bottom-5 left-5 z-50 bg-gray-800 dark:bg-gray-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-gray-700 transition-all transform hover:scale-110 hidden flex items-center gap-2 group" aria-label="Go Back">
+        <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        <span class="text-sm font-bold">Back</span>
+    </button>
+
+    <script>
+        // --- NAVIGATION HISTORY LOGIC ---
+        let navigationStack = [];
+        const globalBackButton = document.getElementById('global-back-button');
+
+        // Modified showSection to handle history
+        function showSection(sectionId, addToHistory = true) {
+            // 1. Identify the currently visible section
+            const currentVisible = document.querySelector('main > section:not(.hidden), #home-content:not(.hidden)');
+            const currentId = currentVisible ? currentVisible.id : 'home-content';
+
+            // 2. If we are moving to a new section, save the old one to history
+            if (addToHistory && currentId && currentId !== sectionId) {
+                navigationStack.push(currentId);
+            }
+
+            // 3. Hide all sections
+            const allSections = document.querySelectorAll('main > section');
+            const homeContent = document.getElementById('home-content');
+            
+            allSections.forEach(section => section.classList.add('hidden'));
+            homeContent.classList.add('hidden');
+
+            // 4. Show the target section
+            const section = document.getElementById(sectionId);
+            if (section) { 
+                section.classList.remove('hidden'); 
+                section.classList.add('animate-fade-in'); 
+                section.addEventListener('animationend', () => section.classList.remove('animate-fade-in'), { once: true });
+            } else { 
+                // Default to home content if section not found
+                homeContent.classList.remove('hidden'); 
+                homeContent.classList.add('animate-fade-in');
+                homeContent.addEventListener('animationend', () => homeContent.classList.remove('animate-fade-in'), { once: true });
+            }
+
+            // 5. Update Mobile Menu State
+            const mobileMenu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('mobile-menu-open-icon');
+            const closeIcon = document.getElementById('mobile-menu-close-icon');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+
+            // 6. Toggle Global Back Button Visibility
+            if (navigationStack.length > 0) {
+                globalBackButton.classList.remove('hidden');
+            } else {
+                globalBackButton.classList.add('hidden');
+            }
+            
+            // Scroll to top of new section
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Function to handle the "Back" action
+        function performGoBack() {
+            if (navigationStack.length > 0) {
+                // Pop the last section ID from the stack
+                const previousSectionId = navigationStack.pop();
+                // Show it, but FALSE so we don't add this action to history again
+                showSection(previousSectionId, false); 
+            } else {
+                // Fallback to home
+                showSection('home-content', false);
+            }
+        }
+
+        // --- Theme Management ---
+        const themeSwitcherButtonDesktop = document.getElementById('theme-switcher-button-desktop');
+        const themeSwitcherButtonMobile = document.getElementById('theme-switcher-button-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+        const html = document.documentElement; 
+        const themes = ['light-theme', 'dark-theme', 'mint-theme', 'purple-theme'];
+        let currentThemeIndex = 0;
+        
+        function applyTheme(themeName) {
+            body.classList.remove(...themes);
+            body.classList.add(themeName);
+            if (themeName === 'dark-theme') { html.classList.add('dark'); } else { html.classList.remove('dark'); }
+
+            let iconPath;
+            if (themeName === 'dark-theme') {
+                iconPath = "M21.75 14.825a.75.75 0 00-.73-.836c-.451-.019-.942-.034-1.464-.034-4.996 0-9.066 4.07-9.066 9.066 0 .522.015 1.013.034 1.464a.75.75 0 00.836.73c2.756-.476 5.215-1.928 7.025-4.084 1.81-2.156 3.016-4.792 3.492-7.857zM18 12.75c0-3.308-2.692-6-6-6s-6 2.692-6 6 2.692 6 6 6 6-2.692 6-6z";
+            } else if (themeName === 'light-theme') {
+                iconPath = "M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.526 3.843a.75.75 0 01-.703-.703l-1.5-2.625a.75.75 0 011.299-.75l1.5 2.625a.75.75 0 01-.596 1.128zM18.724 3.14a.75.75 0 01.703-.703l2.625-1.5a.75.75 0 01.75 1.299l-2.625 1.5a.75.75 0 01-.75-.596zM21 12a.75.75 0 01-.75.75H18a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM7.526 20.157a.75.75 0 01-.596-1.128l2.625-1.5a.75.75 0 01.75 1.299l-2.625 1.5a.75.75 0 01-.75.703zM3.843 16.474a.75.75 0 01-1.128-.596l-2.625-1.5a.75.75 0 01.75-1.299l2.625 1.5a.75.75 0 01.596 1.128zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM16.474 19.474a.75.75 0 01-.596-1.128l-1.5-2.625a.75.75 0 011.299-.75l1.5 2.625a.75.75 0 01-.596 1.128zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM12 6a6 6 0 100 12A6 6 0 0012 6z";
+            } else {
+                iconPath = "M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-5-8h10a1 1 0 010 2H7a1 1 0 010-2z";
+            }
+            const iconSVG = `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="${iconPath}" /></svg>`;
+            themeSwitcherButtonDesktop.innerHTML = iconSVG;
+            themeSwitcherButtonMobile.innerHTML = iconSVG;
+        }
+        
+        function switchTheme() {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(themes[currentThemeIndex]);
+        }
+        
+        themeSwitcherButtonDesktop.addEventListener('click', switchTheme);
+        themeSwitcherButtonMobile.addEventListener('click', switchTheme);
+        applyTheme(themes[currentThemeIndex]);
+        
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('mobile-menu-open-icon');
+        const closeIcon = document.getElementById('mobile-menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        
+        // --- Back to Top Button ---
+        const backToTopButton = document.getElementById('back-to-top-button');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // --- DOM Element Getters & Core Functions ---
+        const searchButton = document.getElementById('search-button');
+        const searchInput = document.getElementById('search-input');
+        const drugDetailsSection = document.getElementById('drug-details-section');
+        const drugDetailsContent = document.getElementById('drug-details-content');
+        const drugDetailsSkeleton = document.getElementById('drug-details-skeleton');
+        const diseaseDetailsSection = document.getElementById('disease-details-section');
+        const diseaseDetailsContent = document.getElementById('disease-details-content');
+        const diseaseDetailsSkeleton = document.getElementById('disease-details-skeleton');
+        const homeContent = document.getElementById('home-content');
+
+        // --- RENDER DRUG INFO (UPDATED HEADER) ---
+        function renderDrugInfo(drugId, drugData) {
+            drugDetailsContent.classList.add('hidden');
+            drugDetailsContent.innerHTML = ''; 
+            drugDetailsSkeleton.classList.remove('hidden');
+
+            const simplifyButton = document.getElementById('simplify-button');
+            const summaryContainer = document.getElementById('simple-summary-container');
+            const summaryText = document.getElementById('simple-summary-text');
+            
+            simplifyButton.classList.add('hidden');
+            summaryContainer.classList.add('hidden');
+            summaryText.innerHTML = '';
+            
+            const newSimplifyButton = simplifyButton.cloneNode(true);
+            simplifyButton.parentNode.replaceChild(newSimplifyButton, simplifyButton);
+
+            if (!drugData || !drugData[drugId]) {
+                drugDetailsContent.innerHTML = `<div class="text-center text-red-500 text-lg font-semibold">Sorry, we couldn't find information for that drug.</div>`;
+                drugDetailsSkeleton.classList.add('hidden');
+                drugDetailsContent.classList.remove('hidden');
+                return;
+            }
+
+            const drug = drugData[drugId];
+
+            if (drug.simpleSummary) {
+                newSimplifyButton.classList.remove('hidden');
+                newSimplifyButton.addEventListener('click', () => {
+                    summaryText.innerHTML = drug.simpleSummary;
+                    summaryContainer.classList.remove('hidden');
+                    newSimplifyButton.classList.add('hidden'); 
+                }, { once: true });
+            }
+
+            setTimeout(() => {
+                // --- DETAILED CLINICAL IDENTITY HEADER ---
+                // Creates a structured grid for Generic, Brand, Category, Class, Pregnancy, Formula, Weight
+                let html = `
+                <div class="mb-8">
+                    <h2 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-6">${drug.name}</h2>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
+                        <div class="bg-gray-100 dark:bg-gray-900 px-4 py-2 border-b border-gray-200 dark:border-gray-700 font-bold text-gray-500 text-xs uppercase tracking-wider">
+                            Clinical Identity
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 dark:bg-gray-700">
+                            
+                            <div class="bg-white dark:bg-gray-800 p-4">
+                                <div class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase mb-1">Generic Name</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">${drug.genericName || 'N/A'}</div>
+                            </div>
+
+                            <div class="bg-white dark:bg-gray-800 p-4">
+                                <div class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase mb-1">Brand Names</div>
+                                <div class="font-medium text-gray-800 dark:text-gray-200 text-sm">${drug.brandNames ? drug.brandNames.join(', ') : 'N/A'}</div>
+                            </div>
+
+                            <div class="bg-white dark:bg-gray-800 p-4">
+                                <div class="text-xs text-blue-500 font-bold uppercase mb-1">Therapeutic Category</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">${drug.category || 'N/A'}</div>
+                            </div>
+
+                            <div class="bg-white dark:bg-gray-800 p-4">
+                                <div class="text-xs text-purple-500 font-bold uppercase mb-1">Drug Class</div>
+                                <div class="font-semibold text-gray-900 dark:text-gray-100">${drug.drugClass || 'N/A'}</div>
+                            </div>
+
+                            <div class="bg-white dark:bg-gray-800 p-4">
+                                <div class="text-xs text-pink-500 font-bold uppercase mb-1">Pregnancy Category</div>
+                                <div class="font-bold text-gray-900 dark:text-gray-100 inline-block px-2 py-0.5 rounded bg-pink-50 dark:bg-pink-900/20 border border-pink-100 dark:border-pink-800/30">
+                                    ${drug.pregnancyCategory || 'Not Rated'}
+                                </div>
+                            </div>
+
+                            <div class="bg-white dark:bg-gray-800 p-4">
+                                <div class="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase mb-1">Chemical Properties</div>
+                                <div class="text-sm">
+                                    <span class="block"><span class="font-mono text-gray-600 dark:text-gray-400">Formula:</span> <span class="font-bold">${drug.formula || 'N/A'}</span></span>
+                                    <span class="block"><span class="font-mono text-gray-600 dark:text-gray-400">Weight:</span> <span class="font-bold">${drug.molecularWeight || 'N/A'}</span></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>`;
+
+                // --- PHARMACODYNAMICS & PHARMACOKINETICS ---
+                html += `<div class="grid grid-cols-1 gap-6 mb-8">`;
+                
+                html += `
+                <div class="card p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-lg font-bold mb-4 icon-heading"><i class="fa-solid fa-microscope text-purple-500"></i><span>Mechanism of Action (Pharmacodynamics)</span></h3>
+                    <div class="space-y-3 text-sm">
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
+                           ${drug.moaSteps ? drug.moaSteps.map(step => `<li>${step}</li>`).join('') : '<li>Mechanism description available in full monograph.</li>'}
+                        </ul>
+                    </div>
+                </div>`;
+
+                // --- PHARMACOKINETICS ---
+                const pk = drug.pharmacokinetics || {};
+                html += `
+                <div class="card p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-lg font-bold mb-4 icon-heading"><i class="fa-solid fa-clock-rotate-left text-blue-500"></i><span>Pharmacokinetics</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        
+                        <div class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-100 dark:border-blue-800/30">
+                            <strong class="block text-blue-800 dark:text-blue-300 mb-2 uppercase text-xs"><i class="fa-solid fa-capsules mr-2"></i>Absorption</strong>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">${pk.absorption || 'Data not available'}</p>
+                        </div>
+
+                        <div class="p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-800/30">
+                            <strong class="block text-green-800 dark:text-green-300 mb-2 uppercase text-xs"><i class="fa-solid fa-network-wired mr-2"></i>Distribution</strong>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">${pk.distribution || 'Data not available'}</p>
+                        </div>
+
+                        <div class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-100 dark:border-purple-800/30">
+                            <strong class="block text-purple-800 dark:text-purple-300 mb-2 uppercase text-xs"><i class="fa-solid fa-liver mr-2"></i>Metabolism</strong>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">${pk.metabolism || 'Data not available'}</p>
+                        </div>
+
+                        <div class="p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-100 dark:border-orange-800/30">
+                            <strong class="block text-orange-800 dark:text-orange-300 mb-2 uppercase text-xs"><i class="fa-solid fa-trash-can mr-2"></i>Elimination / Excretion</strong>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm">${pk.excretion || 'Data not available'}</p>
+                        </div>
+
+                    </div>
+                    ${pk.notes ? `<div class="mt-4 text-xs text-gray-500 italic">Note: ${pk.notes}</div>` : ''}
+                </div>
+                </div>`; // End Grid
+
+                // --- DOSING ---
+                let initDose = "See labeling";
+                let maxDose = "See labeling";
+                if (typeof drug.dose === 'object') {
+                    if (drug.dose.initialDose) initDose = drug.dose.initialDose;
+                    if (drug.dose.maxDose) maxDose = drug.dose.maxDose;
+                }
+
+                html += `
+                <div class="mb-8 card p-6 rounded-xl border shadow-sm border-l-4 border-l-green-500">
+                    <h3 class="text-xl font-bold mb-4 icon-heading"><i class="fa-solid fa-syringe text-green-600"></i><span>Dosing</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <div class="text-xs font-bold text-gray-500 uppercase mb-1">Initial Dosage</div>
+                            <div class="font-semibold text-gray-800 dark:text-white text-sm">${initDose}</div>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                            <div class="text-xs font-bold text-gray-500 uppercase mb-1">Max Dosage</div>
+                            <div class="font-semibold text-gray-800 dark:text-white text-sm">${maxDose}</div>
+                        </div>
+                    </div>
+                    ${drug.dose && drug.dose.notes ? `<div class="mt-4 text-sm text-gray-500 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded border border-yellow-100 dark:border-yellow-800/30 text-gray-700 dark:text-gray-300"><i class="fa-solid fa-circle-info mr-2"></i>${drug.dose.notes}</div>` : ''}
+                </div>`;
+
+                // --- INTERACTIONS & ADVERSE REACTIONS ---
+                html += `<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <div class="card p-6 rounded-xl border shadow-sm">
+                        <h3 class="text-lg font-bold mb-4 icon-heading"><i class="fa-solid fa-right-left text-orange-500"></i><span>Interactions</span></h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-sm text-red-500 mb-2 flex items-center"><i class="fa-solid fa-pills mr-2"></i>Drug-Drug</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-2">
+                                    ${drug.interactions?.drug ? drug.interactions.drug.map(i=>`<li>${i}</li>`).join('') : '<li>Monitor for CYP450 interactions.</li>'}
+                                </ul>
+                            </div>
+                            <div class="border-t border-gray-100 dark:border-gray-700 pt-4">
+                                <h4 class="font-bold text-sm text-yellow-600 mb-2 flex items-center"><i class="fa-solid fa-utensils mr-2"></i>Drug-Food</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1 ml-2">
+                                    ${drug.interactions?.food ? drug.interactions.food.map(i=>`<li>${i}</li>`).join('') : '<li>No specific food restrictions reported.</li>'}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 rounded-xl border shadow-sm">
+                        <h3 class="text-lg font-bold mb-4 icon-heading"><i class="fa-solid fa-triangle-exclamation text-red-500"></i><span>Adverse Reactions</span></h3>
+                        <div class="space-y-4">
+                            <div class="p-3 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-100 dark:border-red-800/30">
+                                <h4 class="font-bold text-sm text-red-700 dark:text-red-400 mb-1">Serious ADRs</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300">
+                                    ${drug.adverseEffects?.serious?.map(e => `<li>${e}</li>`).join('') || '<li>None listed.</li>'}
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-gray-700 dark:text-gray-300 mb-1">Common Side Effects</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400">
+                                    ${drug.adverseEffects?.common?.map(e => `<li>${e}</li>`).join('') || '<li>Nausea, headache.</li>'}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+
+                if (drug.indications) {
+                    html += `<div class="mb-6"><h3 class="text-xl font-semibold mb-2 icon-subheading"><i class="fa-solid fa-book-medical fa-fw text-blue-500"></i><span>Indications</span></h3><p class="text-sm break-words text-gray-700 dark:text-gray-300">${drug.indications}</p></div>`;
+                }
+
+                if (drug.contraindications?.length) {
+                    html += `<div class="mb-6"><h3 class="text-xl font-semibold mb-2 icon-subheading"><i class="fa-solid fa-ban fa-fw text-red-500"></i><span>Contraindications</span></h3><ul class="list-disc list-inside text-sm space-y-1 text-red-600 dark:text-red-400">${drug.contraindications.map(item => `<li class="break-words">${item}</li>`).join('')}</ul></div>`;
+                }
+
+                if (drug.precautions?.length) {
+                    html += `<div class="mb-6"><h3 class="text-xl font-semibold mb-2 icon-subheading"><i class="fa-solid fa-shield-halved fa-fw text-orange-500"></i><span>Precautions</span></h3><ul class="list-disc list-inside text-sm space-y-2 text-gray-700 dark:text-gray-300">${drug.precautions.map(item => {
+                        if (item.startsWith('BOXED WARNING')) {
+                            return `<li class="p-3 bg-red-100 border-l-4 border-red-500 text-red-700 list-none -ml-5 break-words rounded-r-lg">${item.replace('BOXED WARNING', '<strong class="font-bold text-red-800">BOXED WARNING</strong>')}</li>`;
+                        } else {
+                            return `<li class="break-words">${item}</li>`;
+                        }
+                    }).join('')}</ul></div>`;
+                }
+
+                drugDetailsContent.innerHTML = html;
+                drugDetailsSkeleton.classList.add('hidden');
+                drugDetailsContent.classList.remove('hidden');
+                drugDetailsContent.classList.add('animate-fade-in');
+                drugDetailsContent.addEventListener('animationend', () => drugDetailsContent.classList.remove('animate-fade-in'), { once: true });
+            }, 300);
+        }
+
+        // --- IMPROVED RENDER DISEASE INFO ---
+        function renderDiseaseInfo(diseaseId, diseaseData, allDrugData) {
+            const contentDiv = document.getElementById('disease-details-content');
+            const skeleton = document.getElementById('disease-details-skeleton');
+            
+            contentDiv.classList.add('hidden');
+            contentDiv.innerHTML = '';
+            skeleton.classList.remove('hidden');
+
+            setTimeout(() => {
+                const disease = diseaseData[diseaseId];
+
+                if (!disease) {
+                    contentDiv.innerHTML = `<div class="text-center text-red-500 text-lg font-semibold">Sorry, we couldn't find information for that disease.</div>`;
+                    skeleton.classList.add('hidden');
+                    contentDiv.classList.remove('hidden');
+                    return;
+                }
+
+                let html = `
+                <div class="mb-8 border-b pb-6 border-gray-200 dark:border-gray-700">
+                    <h2 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4">${disease.name}</h2>
+                    ${disease.definition ? `<p class="text-lg font-medium text-gray-800 dark:text-gray-200 italic border-l-4 border-blue-500 pl-4 bg-blue-50 dark:bg-gray-800 py-2 rounded-r-lg">${disease.definition}</p>` : ''}
+                </div>`;
+
+                // --- OVERVIEW & ETIOLOGY GRID ---
+                html += `<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">`;
+                
+                // Overview Card
+                html += `
+                <div class="card p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 icon-heading text-blue-600 dark:text-blue-400"><i class="fa-solid fa-book-open-reader"></i><span>Clinical Overview</span></h3>
+                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed text-sm">${disease.overview}</p>
+                </div>`;
+
+                // Etiology Card
+                html += `
+                <div class="card p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 icon-heading text-purple-600 dark:text-purple-400"><i class="fa-solid fa-dna"></i><span>Etiology & Causes</span></h3>
+                    <div class="space-y-3 text-sm">
+                        <p class="font-medium text-gray-800 dark:text-gray-200">${disease.etiology.summary}</p>
+                        ${disease.etiology.primary ? `<div class="bg-purple-50 dark:bg-purple-900/20 p-3 rounded-lg"><span class="font-bold text-purple-700 dark:text-purple-300 text-xs uppercase block mb-1">Primary Causes</span>${disease.etiology.primary}</div>` : ''}
+                        ${disease.etiology.secondary ? `<div class="bg-gray-50 dark:bg-gray-800 p-3 rounded-lg"><span class="font-bold text-gray-600 dark:text-gray-400 text-xs uppercase block mb-1">Secondary Causes</span>${disease.etiology.secondary}</div>` : ''}
+                    </div>
+                </div>
+                </div>`; // End Grid
+
+                // --- SIGNS, SYMPTOMS & RISK FACTORS ---
+                html += `<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">`;
+                
+                // Signs & Symptoms
+                html += `
+                <div class="lg:col-span-2 card p-6 rounded-xl border shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 icon-heading text-red-500"><i class="fa-solid fa-stethoscope"></i><span>Signs & Symptoms</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            ${disease.signsAndSymptoms.slice(0, Math.ceil(disease.signsAndSymptoms.length/2)).map(s => `<li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-red-400 mt-1"></i><span>${s}</span></li>`).join('')}
+                        </ul>
+                        <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            ${disease.signsAndSymptoms.slice(Math.ceil(disease.signsAndSymptoms.length/2)).map(s => `<li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-red-400 mt-1"></i><span>${s}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>`;
+
+                // Risk Factors
+                if (disease.riskFactors && disease.riskFactors.length > 0) {
+                    html += `
+                    <div class="card p-6 rounded-xl border shadow-sm bg-orange-50 dark:bg-orange-900/10 border-orange-100 dark:border-orange-900/30">
+                        <h3 class="text-xl font-bold mb-4 icon-heading text-orange-600 dark:text-orange-400"><i class="fa-solid fa-triangle-exclamation"></i><span>Risk Factors</span></h3>
+                        <ul class="space-y-2 text-sm text-gray-800 dark:text-gray-200">
+                            ${disease.riskFactors.map(r => `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-orange-400 mt-1"></i><span>${r}</span></li>`).join('')}
+                        </ul>
+                    </div>`;
+                }
+                html += `</div>`; // End Grid
+
+                // --- TYPES (If applicable) ---
+                if (disease.types && disease.types.length > 0) {
+                    html += `
+                    <div class="mb-8 card p-6 rounded-xl border shadow-sm">
+                        <h3 class="text-xl font-bold mb-4 icon-heading text-blue-500"><i class="fa-solid fa-layer-group"></i><span>Classifications / Types</span></h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            ${disease.types.map(type => `
+                                <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <h4 class="font-bold text-blue-700 dark:text-blue-400 mb-2">${type.name}</h4>
+                                    <p class="text-xs text-gray-600 dark:text-gray-400">${type.details}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>`;
+                }
+
+                // --- PATHOPHYSIOLOGY (Visual Flow) ---
+                if (disease.pathophysiologySteps && disease.pathophysiologySteps.length > 0) {
+                    html += `
+                    <div class="mb-8 card p-6 rounded-xl border shadow-sm bg-slate-50 dark:bg-slate-800/50">
+                        <h3 class="text-xl font-bold mb-6 icon-heading text-slate-600 dark:text-slate-300"><i class="fa-solid fa-microscope"></i><span>Pathophysiology Cascade</span></h3>
+                        <div class="relative">
+                            <div class="absolute left-4 top-0 h-full w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+                            <div class="space-y-6">
+                                ${disease.pathophysiologySteps.map((step, index) => `
+                                    <div class="relative flex items-start gap-4">
+                                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white dark:bg-slate-700 border-2 border-blue-400 flex items-center justify-center z-10 font-bold text-xs text-blue-500 shadow-sm">
+                                            ${index + 1}
+                                        </div>
+                                        <div class="bg-white dark:bg-slate-700 p-3 rounded-lg shadow-sm border border-slate-100 dark:border-slate-600 flex-grow">
+                                            <p class="text-sm text-slate-700 dark:text-slate-200">${step}</p>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>`;
+                }
+
+                // --- STANDARD TREATMENT PROTOCOL (From JSON) ---
+                if (disease.standardTreatment && disease.standardTreatment.length > 0) {
+                    html += `
+                    <div class="mb-8 card p-6 rounded-xl border shadow-sm overflow-hidden">
+                        <h3 class="text-xl font-bold mb-4 icon-heading text-green-600 dark:text-green-400"><i class="fa-solid fa-clipboard-list"></i><span>Standard Treatment Protocol</span></h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 uppercase text-xs">
+                                    <tr>
+                                        <th class="px-4 py-3 rounded-tl-lg">Class / Category</th>
+                                        <th class="px-4 py-3">Common Drugs</th>
+                                        <th class="px-4 py-3 rounded-tr-lg">Standard Dosage (Ref)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                                    ${disease.standardTreatment.map(tx => `
+                                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                                            <td class="px-4 py-3 font-bold text-gray-800 dark:text-gray-200">${tx.class}</td>
+                                            <td class="px-4 py-3 text-blue-600 dark:text-blue-400 font-medium">${tx.drugs}</td>
+                                            <td class="px-4 py-3 text-gray-600 dark:text-gray-400 italic">${tx.dosage}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>`;
+                }
+
+                // --- DYNAMIC DRUG LOOKUP (Existing Feature) ---
+                const treatmentDrugs = findDrugsForDisease(disease.searchKeywords || [disease.name], allDrugData);
+                if (Object.keys(treatmentDrugs).length > 0) {
+                    html += `
+                    <div class="mb-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-100 dark:border-blue-800/30">
+                         <h3 class="text-md font-bold mb-3 icon-heading text-blue-700 dark:text-blue-300"><i class="fa-solid fa-link"></i><span>Drugs in Database Linked to this Condition</span></h3>
+                         <div class="flex flex-wrap gap-2">
+                            ${Object.values(treatmentDrugs).flat().map(drug => 
+                                `<button class="drug-link px-3 py-1 bg-white dark:bg-gray-800 border border-blue-200 dark:border-blue-700 rounded-full text-xs font-semibold text-blue-600 dark:text-blue-400 hover:bg-blue-500 hover:text-white transition-colors shadow-sm" data-drug-id="${drug.key}">
+                                    ${drug.name} <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
+                                </button>`
+                            ).join('')}
+                         </div>
+                    </div>`;
+                }
+
+                // --- CONTRAINDICATIONS & LIFESTYLE GRID ---
+                html += `<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">`;
+
+                // Treatment Contraindications
+                if (disease.treatmentContraindications && disease.treatmentContraindications.length > 0) {
+                    html += `
+                    <div class="card p-6 rounded-xl border shadow-sm border-l-4 border-l-red-500">
+                        <h3 class="text-xl font-bold mb-4 icon-heading text-red-600 dark:text-red-400"><i class="fa-solid fa-ban"></i><span>Treatment Contraindications</span></h3>
+                        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                            ${disease.treatmentContraindications.map(item => {
+                                const parts = item.split(':');
+                                const boldPart = parts.length > 1 ? parts[0] : '';
+                                const rest = parts.length > 1 ? parts.slice(1).join(':') : item;
+                                return `<li class="flex items-start gap-2"><i class="fa-solid fa-circle-xmark text-red-500 mt-1 text-xs"></i><span>${boldPart ? `<strong>${boldPart}</strong>` : ''}${rest}</span></li>`;
+                            }).join('')}
+                        </ul>
+                    </div>`;
+                }
+
+                // Lifestyle Modifications
+                if (disease.lifestyleModifications && disease.lifestyleModifications.length > 0) {
+                    html += `
+                    <div class="card p-6 rounded-xl border shadow-sm border-l-4 border-l-green-500">
+                        <h3 class="text-xl font-bold mb-4 icon-heading text-green-600 dark:text-green-400"><i class="fa-solid fa-person-walking"></i><span>Lifestyle & Non-Pharm</span></h3>
+                        <ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                             ${disease.lifestyleModifications.map(item => {
+                                const parts = item.split('**');
+                                if (parts.length > 2) {
+                                    return `<li class="flex items-start gap-2"><i class="fa-solid fa-leaf text-green-500 mt-1 text-xs"></i><span><strong>${parts[1]}</strong> ${parts[2]}</span></li>`;
+                                }
+                                return `<li class="flex items-start gap-2"><i class="fa-solid fa-leaf text-green-500 mt-1 text-xs"></i><span>${item.replace(/\*\*/g, '')}</span></li>`;
+                            }).join('')}
+                        </ul>
+                    </div>`;
+                }
+                html += `</div>`; // End Grid
+
+                contentDiv.innerHTML = html;
+                skeleton.classList.add('hidden');
+                contentDiv.classList.remove('hidden');
+                contentDiv.classList.add('animate-fade-in');
+                
+                // Re-attach event listeners to the new dynamic drug links
+                document.querySelectorAll('#disease-details-content .drug-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        // Find the main section logic to switch tabs
+                        const drugId = link.dataset.drugId;
+                        const drugSection = document.getElementById('drug-details-section');
+                        const diseaseSection = document.getElementById('disease-details-section');
+                        
+                        // Use the new showSection logic to handle history
+                        showSection('drug-details-section');
+                        renderDrugInfo(drugId, allDrugData);
+                        document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+
+                contentDiv.addEventListener('animationend', () => contentDiv.classList.remove('animate-fade-in'), { once: true });
+
+            }, 300);
+        }
+     
+        function findDrugsForDisease(keywords, allDrugData) {
+            const groupedDrugs = {};
+            for (const drugKey in allDrugData) {
+                const drug = allDrugData[drugKey];
+                if (drug.indications) {
+                    const indicationText = drug.indications.toLowerCase();
+                    if (keywords.some(keyword => indicationText.includes(keyword.toLowerCase()))) {
+                        const drugClass = drug.drugClass || "Unclassified";
+                        if (!groupedDrugs[drugClass]) { groupedDrugs[drugClass] = []; }
+                        groupedDrugs[drugClass].push({ key: drugKey, name: drug.name });
+                    }
+                }
+            }
+            return groupedDrugs;
+        }
+
+        // --- Main Application Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            Promise.all([
+                fetch('expanded_drugs.json').then(res => res.json()),
+                fetch('diseaseData.json').then(res => res.json())
+            ])
+            .then(([drugData, diseaseData]) => {
+                initializePage(drugData, diseaseData);
+            })
+            .catch(error => {
+                console.error("Could not load data:", error);
+                document.getElementById('drug-list-container').innerHTML = `<p class="text-center text-red-500 font-semibold">Error: Could not load data files. Ensure 'expanded_drugs.json' and 'diseaseData.json' are present.</p>`;
+            });
+        });
+
+        function initializePage(drugData, diseaseData) {
+            
+            // Attach Global Back Button Logic
+            document.getElementById('global-back-button').addEventListener('click', performGoBack);
+
+            // Update Existing Back Buttons to use History if available
+            document.getElementById('back-to-list-button').addEventListener('click', () => { 
+                if(navigationStack.length > 0) performGoBack();
+                else showSection('home'); 
+            });
+            
+            document.getElementById('back-to-diseases-button').addEventListener('click', () => { 
+                if(navigationStack.length > 0) performGoBack();
+                else showSection('diseases-section'); 
+            });
+
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            const drugListsContainer = document.getElementById('drug-list-container');
+            drugListsContainer.innerHTML = ''; 
+            const alphabetNavContainer = document.getElementById('alphabet-nav-container');
+            const recommendationsList = document.getElementById('recommendations-list');
+            const recommendationsContainer = document.getElementById('recommendations-container');
+            const diseaseSearchInput = document.getElementById('disease-search-input');
+            
+            const allDrugNames = Object.values(drugData).map(drug => drug.name);
+            const drugNameMap = {};
+            for (const key in drugData) {
+                const drug = drugData[key];
+                if (drug.name) { drugNameMap[drug.name.toLowerCase()] = key; }
+                if (drug.genericName) { drugNameMap[drug.genericName.toLowerCase()] = key; }
+                if (drug.brandNames) { drug.brandNames.forEach(brand => { drugNameMap[brand.toLowerCase()] = key; }); }
+            }
+
+            // --- INTERACTION MATRIX LOGIC ---
+            const matrixInput = document.getElementById('matrix-input');
+            const matrixAddBtn = document.getElementById('matrix-add-btn');
+            const matrixTagContainer = document.getElementById('matrix-tag-container');
+            const matrixEmptyMsg = document.getElementById('matrix-empty-msg');
+            const generateMatrixBtn = document.getElementById('generate-matrix-btn');
+            const matrixContainer = document.getElementById('matrix-container');
+            const matrixDetails = document.getElementById('matrix-details');
+            
+            let matrixDrugs = []; 
+
+            function analyzeInteraction(id1, id2) {
+                const d1 = drugData[id1];
+                const d2 = drugData[id2];
+                
+                let severity = "None";
+                let warningText = "";
+                let solution = "";
+
+                const checkMatch = (text, targetName, targetClass) => {
+                    if (!text) return false;
+                    const t = text.toLowerCase();
+                    return t.includes(targetName.toLowerCase()) || (targetClass && t.includes(targetClass.toLowerCase()));
+                };
+
+                const d2Name = d2.name.split(' ')[0];
+                const d2Generic = d2.genericName ? d2.genericName.split(' ')[0] : "";
+                
+                if (d1.contraindications) {
+                    d1.contraindications.forEach(c => {
+                        if (checkMatch(c, d2Name, d2.drugClass) || checkMatch(c, d2Generic, d2.drugClass)) {
+                            severity = "Major";
+                            warningText = c;
+                            solution = "DO NOT ADMINISTER. Use an alternative medication.";
+                        }
+                    });
+                }
+
+                if (severity === "None" && d1.precautions) {
+                    d1.precautions.forEach(p => {
+                        if (checkMatch(p, d2Name, d2.drugClass) || checkMatch(p, d2Generic, d2.drugClass)) {
+                            severity = "Moderate";
+                            warningText = p;
+                            if (p.toLowerCase().includes("monitor")) solution = "Monitor patient closely for signs of toxicity.";
+                            else if (p.toLowerCase().includes("adjust")) solution = "Dose adjustment may be required.";
+                            else solution = "Use with caution and monitor clinical status.";
+                        }
+                    });
+                }
+
+                if (severity === "None") {
+                    const d1Name = d1.name.split(' ')[0];
+                    const d1Generic = d1.genericName ? d1.genericName.split(' ')[0] : "";
+
+                    if (d2.contraindications) {
+                        d2.contraindications.forEach(c => {
+                            if (checkMatch(c, d1Name, d1.drugClass) || checkMatch(c, d1Generic, d1.drugClass)) {
+                                severity = "Major";
+                                warningText = c;
+                                solution = "DO NOT ADMINISTER. Use an alternative medication.";
+                            }
+                        });
+                    }
+                    if (severity === "None" && d2.precautions) {
+                        d2.precautions.forEach(p => {
+                            if (checkMatch(p, d1Name, d1.drugClass) || checkMatch(p, d1Generic, d1.drugClass)) {
+                                severity = "Moderate";
+                                warningText = p;
+                                if (p.toLowerCase().includes("monitor")) solution = "Monitor patient closely.";
+                                else solution = "Use with caution.";
+                            }
+                        });
+                    }
+                }
+
+                return { severity, warningText, solution };
+            }
+
+            if (matrixAddBtn) {
+                matrixAddBtn.addEventListener('click', () => {
+                    const query = matrixInput.value.toLowerCase().trim();
+                    const drugId = drugNameMap[query];
+
+                    if (!drugId) {
+                        alert("Drug not found in your database. Ensure spelling is correct.");
+                        return;
+                    }
+                    
+                    if (matrixDrugs.includes(drugId)) return;
+
+                    matrixDrugs.push(drugId);
+                    matrixEmptyMsg.classList.add('hidden');
+                    generateMatrixBtn.classList.remove('hidden');
+
+                    const tag = document.createElement('div');
+                    tag.className = "bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-2 border border-blue-200 shadow-sm";
+                    tag.innerHTML = `${drugData[drugId].name} <button class="text-blue-400 hover:text-red-600 focus:outline-none"><i class="fa-solid fa-xmark"></i></button>`;
+                    
+                    tag.querySelector('button').addEventListener('click', () => {
+                        matrixDrugs = matrixDrugs.filter(d => d !== drugId);
+                        tag.remove();
+                        if(matrixDrugs.length === 0) {
+                            matrixEmptyMsg.classList.remove('hidden');
+                            generateMatrixBtn.classList.add('hidden');
+                            matrixContainer.classList.add('hidden');
+                        }
+                    });
+
+                    matrixTagContainer.appendChild(tag);
+                    matrixInput.value = "";
+                });
+
+                generateMatrixBtn.addEventListener('click', () => {
+                    if (matrixDrugs.length < 2) {
+                        alert("Please add at least 2 drugs to create a matrix.");
+                        return;
+                    }
+
+                    const thead = document.getElementById('matrix-head');
+                    const tbody = document.getElementById('matrix-body');
+                    matrixDetails.innerHTML = '<h4 class="text-lg font-bold border-b pb-2 mb-4">Detailed Clinical Recommendations</h4>';
+                    
+                    let headerHTML = '<tr><th class="p-2 bg-gray-50 border"></th>';
+                    matrixDrugs.forEach(id => {
+                        headerHTML += `<th class="p-2 bg-gray-100 border text-xs font-bold text-gray-700 h-24 writing-vertical rotate-180" style="writing-mode: vertical-rl;">${drugData[id].name}</th>`;
+                    });
+                    headerHTML += '</tr>';
+                    thead.innerHTML = headerHTML;
+
+                    tbody.innerHTML = '';
+                    let hasIssues = false;
+                    
+                    matrixDrugs.forEach((rowId, rowIndex) => {
+                        let rowHTML = `<tr><th class="p-2 bg-gray-100 border text-xs font-bold text-gray-700 text-right max-w-[100px] truncate">${drugData[rowId].name}</th>`;
+                        
+                        matrixDrugs.forEach((colId, colIndex) => {
+                            if (rowId === colId) {
+                                rowHTML += `<td class="p-2 bg-gray-200 border"></td>`;
+                            } else {
+                                const result = analyzeInteraction(rowId, colId);
+                                let cellContent = '<i class="fa-solid fa-check text-green-400"></i>';
+                                let cellClass = "bg-green-50 hover:bg-green-100"; 
+
+                                if (result.severity === "Major") {
+                                    cellContent = '<i class="fa-solid fa-ban text-red-600 text-xl"></i>';
+                                    cellClass = "bg-red-100 hover:bg-red-200 cursor-pointer";
+                                    
+                                    if (rowIndex < colIndex) {
+                                        hasIssues = true;
+                                        matrixDetails.innerHTML += `
+                                        <div class="p-4 border-l-4 border-red-500 bg-red-50 rounded-r-lg shadow-sm">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <span class="font-bold text-red-800 text-lg">${drugData[rowId].name} + ${drugData[colId].name}</span>
+                                                <span class="px-2 py-1 bg-red-200 text-red-800 text-xs font-bold rounded uppercase">Contraindicated</span>
+                                            </div>
+                                            <p class="text-sm text-gray-700 mb-2"><strong>Mechanism:</strong> ${result.warningText}</p>
+                                            <div class="mt-2 p-2 bg-white rounded border border-red-100">
+                                                <strong class="text-red-600 text-sm"><i class="fa-solid fa-user-doctor mr-1"></i> Recommended Action:</strong>
+                                                <span class="text-sm text-gray-800">${result.solution}</span>
+                                            </div>
+                                        </div>`;
+                                    }
+                                } else if (result.severity === "Moderate") {
+                                    cellContent = '<i class="fa-solid fa-triangle-exclamation text-yellow-600 text-lg"></i>';
+                                    cellClass = "bg-yellow-50 hover:bg-yellow-100 cursor-pointer";
+
+                                    if (rowIndex < colIndex) {
+                                        hasIssues = true;
+                                        matrixDetails.innerHTML += `
+                                        <div class="p-4 border-l-4 border-yellow-500 bg-yellow-50 rounded-r-lg shadow-sm">
+                                            <div class="flex items-center gap-2 mb-2">
+                                                <span class="font-bold text-yellow-800 text-lg">${drugData[rowId].name} + ${drugData[colId].name}</span>
+                                                <span class="px-2 py-1 bg-yellow-200 text-yellow-800 text-xs font-bold rounded uppercase">Monitor</span>
+                                            </div>
+                                            <p class="text-sm text-gray-700 mb-2"><strong>Risk:</strong> ${result.warningText}</p>
+                                            <div class="mt-2 p-2 bg-white rounded border border-yellow-100">
+                                                <strong class="text-yellow-600 text-sm"><i class="fa-solid fa-clipboard-check mr-1"></i> Management:</strong>
+                                                <span class="text-sm text-gray-800">${result.solution}</span>
+                                            </div>
+                                        </div>`;
+                                    }
+                                }
+                                rowHTML += `<td class="p-3 border transition-colors ${cellClass}" title="${result.severity}">${cellContent}</td>`;
+                            }
+                        });
+                        rowHTML += '</tr>';
+                        tbody.innerHTML += rowHTML;
+                    });
+
+                    if (!hasIssues) {
+                        matrixDetails.innerHTML += `<div class="p-4 bg-green-50 border-l-4 border-green-500 text-green-800 rounded-r-lg">No specific interactions found in this database for the selected combination.</div>`;
+                    }
+                    matrixContainer.classList.remove('hidden');
+                });
+            }
+
+            // --- PHARMA QUIZ LOGIC ---
+            const quizStartBtn = document.getElementById('start-quiz-button');
+            const quizNextBtn = document.getElementById('next-question-button');
+            const quizStartView = document.getElementById('quiz-start-view');
+            const quizGameView = document.getElementById('quiz-game-view');
+            const quizClueText = document.getElementById('quiz-clue-text');
+            const quizOptionsGrid = document.getElementById('quiz-options-grid');
+            const quizFeedbackContainer = document.getElementById('quiz-feedback-container');
+            const quizFeedback = document.getElementById('quiz-feedback');
+            const quizScoreDisplay = document.getElementById('quiz-score');
+
+            let currentCorrectKey = null;
+            let currentScore = 0;
+
+            function generateQuizQuestion() {
+                quizFeedbackContainer.classList.add('hidden');
+                quizOptionsGrid.innerHTML = '';
+                quizOptionsGrid.classList.remove('opacity-50', 'pointer-events-none'); 
+                
+                const validKeys = Object.keys(drugData).filter(key => 
+                    drugData[key].indications && drugData[key].indications.length > 10
+                );
+
+                if (validKeys.length < 4) return;
+
+                const correctIndex = Math.floor(Math.random() * validKeys.length);
+                currentCorrectKey = validKeys[correctIndex];
+                const correctDrug = drugData[currentCorrectKey];
+
+                const wrongKeys = [];
+                while(wrongKeys.length < 3) {
+                    const randIndex = Math.floor(Math.random() * validKeys.length);
+                    const key = validKeys[randIndex];
+                    if (key !== currentCorrectKey && !wrongKeys.includes(key)) {
+                        wrongKeys.push(key);
+                    }
+                }
+
+                const options = [currentCorrectKey, ...wrongKeys];
+                for (let i = options.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [options[i], options[j]] = [options[j], options[i]];
+                }
+
+                const useMoa = Math.random() > 0.7 && correctDrug.moaSteps && correctDrug.moaSteps.length > 0;
+                
+                if (useMoa) {
+                    let moaText = correctDrug.moaSteps[0];
+                    const nameParts = correctDrug.name.split(' ');
+                    nameParts.forEach(part => {
+                        if(part.length > 3) { 
+                            const regex = new RegExp(part, 'gi');
+                            moaText = moaText.replace(regex, "______");
+                        }
+                    });
+                    quizClueText.innerHTML = `<span class="text-purple-600 font-bold block text-sm mb-1">MECHANISM OF ACTION:</span> ${moaText}`;
+                } else {
+                    quizClueText.innerHTML = `<span class="text-blue-600 font-bold block text-sm mb-1">INDICATION:</span> ${correctDrug.indications}`;
+                }
+
+                options.forEach(key => {
+                    const drug = drugData[key];
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-btn-theme w-full p-4 text-left rounded-xl font-semibold shadow-sm mb-0';
+                    btn.innerHTML = `<span class="block text-xs sub-text mb-1 uppercase tracking-wide">${drug.drugClass || 'Medication'}</span><span class="text-lg">${drug.name}</span>`;
+                    btn.onclick = () => handleQuizGuess(key, btn);
+                    quizOptionsGrid.appendChild(btn);
+                });
+            }
+
+            function handleQuizGuess(selectedKey, btnElement) {
+                quizOptionsGrid.classList.add('pointer-events-none');
+                const isCorrect = (selectedKey === currentCorrectKey);
+                const allBtns = quizOptionsGrid.querySelectorAll('button');
+                btnElement.classList.remove('quiz-btn-theme'); 
+                
+                if (isCorrect) {
+                    currentScore += 10;
+                    btnElement.className = 'w-full p-4 text-left rounded-xl font-semibold shadow-sm border-2 bg-green-100 border-green-500 text-green-900 dark:bg-green-900 dark:text-green-100 dark:border-green-400';
+                    btnElement.innerHTML += `<i class="fa-solid fa-check float-right text-2xl mt-1"></i>`;
+                    quizFeedback.textContent = "Correct! +10 Points";
+                    quizFeedback.className = "w-full text-center p-3 rounded-lg mb-4 font-bold text-lg bg-green-100 text-green-800 border border-green-300";
+                } else {
+                    btnElement.className = 'w-full p-4 text-left rounded-xl font-semibold shadow-sm border-2 bg-red-100 border-red-500 text-red-900 dark:bg-red-900 dark:text-red-100 dark:border-red-400';
+                    btnElement.innerHTML += `<i class="fa-solid fa-xmark float-right text-2xl mt-1"></i>`;
+                    const correctDrugName = drugData[currentCorrectKey].name;
+                    allBtns.forEach(b => {
+                        if(b.innerHTML.includes(correctDrugName)) {
+                            b.style.borderColor = 'var(--primary-color)';
+                            b.style.borderWidth = '4px';
+                        }
+                    });
+                    quizFeedback.innerHTML = `Incorrect. The right answer was <strong>${correctDrugName}</strong>.`;
+                    quizFeedback.className = "w-full text-center p-3 rounded-lg mb-4 font-bold text-lg bg-red-100 text-red-800 border border-red-300";
+                }
+                quizScoreDisplay.textContent = `Score: ${currentScore}`;
+                quizFeedbackContainer.classList.remove('hidden');
+            }
+
+            if(quizStartBtn) {
+                quizStartBtn.addEventListener('click', () => {
+                    quizStartView.classList.add('hidden');
+                    quizGameView.classList.remove('hidden');
+                    generateQuizQuestion();
+                });
+            }
+            if(quizNextBtn) {
+                quizNextBtn.addEventListener('click', generateQuizQuestion);
+            }
+
+            const drugLists = {};
+            for (const key in drugData) {
+                const letter = drugData[key].name[0].toUpperCase();
+                if (alphabet.includes(letter)) {
+                    if (!drugLists[letter]) { drugLists[letter] = []; }
+                    drugLists[letter].push({ key: key, name: drugData[key].name });
+                }
+            }
+            alphabet.forEach((letter, index) => {
+                const button = document.createElement('button');
+                button.className = 'alphabet-link text-sm md:text-base px-2 py-1 rounded-md font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors animate-fade-in-slide-up';
+                button.style.animationDelay = `${index * 20}ms`;
+                button.textContent = letter;
+                alphabetNavContainer.appendChild(button);
+                
+                const listDiv = document.createElement('div');
+                listDiv.id = `${letter}-list`;
+                listDiv.className = 'drug-list hidden';
+                if (drugLists[letter]) {
+                    listDiv.innerHTML = `<h3 class="text-xl font-bold mb-4">Drugs starting with '${letter}'</h3><ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">${drugLists[letter].sort((a,b) => a.name.localeCompare(b.name)).map(drug => `<li><a href="#" class="drug-link block p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" data-drug-id="${drug.key}">${drug.name}</a></li>`).join('')}</ul>`;
+                } else {
+                    listDiv.innerHTML = `<h3 class="text-xl font-bold mb-4">Drugs starting with '${letter}'</h3><p class="text-sm text-gray-500">No drugs starting with this letter.</p>`;
+                }
+                drugListsContainer.appendChild(listDiv);
+            });
+
+            const diseaseGridContainer = document.getElementById('disease-grid-container');
+            diseaseGridContainer.innerHTML = ''; 
+
+            for (const diseaseKey in diseaseData) {
+                const disease = diseaseData[diseaseKey];
+                const card = document.createElement('a');
+                card.href = "#";
+                card.className = "disease-link card border rounded-xl p-4 flex items-center space-x-4 animate-fade-in-slide-up";
+                card.dataset.diseaseId = diseaseKey;
+                card.innerHTML = `
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                        <i class="fa-solid fa-virus-covid text-blue-500 text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-md">${disease.name}</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">${disease.overview.substring(0, 50)}...</p>
+                    </div>
+                `;
+                diseaseGridContainer.appendChild(card);
+            }
+
+            document.querySelectorAll('.alphabet-link').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    document.querySelectorAll('.drug-list').forEach(list => list.classList.add('hidden'));
+                    const targetList = document.getElementById(`${event.target.textContent}-list`);
+                    if (targetList) {
+                        targetList.classList.remove('hidden');
+                        targetList.classList.add('animate-fade-in');
+                        targetList.addEventListener('animationend', () => targetList.classList.remove('animate-fade-in'), { once: true });
+                    }
+                });
+            });
+
+            drugListsContainer.addEventListener('click', (event) => {
+                event.preventDefault();
+                const drugLink = event.target.closest('.drug-link');
+                if (drugLink) {
+                    showSection('drug-details-section');
+                    renderDrugInfo(drugLink.dataset.drugId, drugData);
+                    document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase().trim();
+                recommendationsList.innerHTML = '';
+                if (query.length > 0) {
+                    const filteredDrugs = allDrugNames.filter(name => name.toLowerCase().includes(query)).slice(0, 10);
+                    if (filteredDrugs.length > 0) {
+                        filteredDrugs.forEach(name => {
+                            const li = document.createElement('li');
+                            li.textContent = name;
+                            li.classList.add('p-3', 'cursor-pointer', 'rounded-lg');
+                            li.addEventListener('click', () => {
+                                searchInput.value = name;
+                                recommendationsContainer.classList.add('hidden');
+                                const drugId = drugNameMap[name.toLowerCase()];
+                                showSection('drug-details-section');
+                                renderDrugInfo(drugId, drugData);
+                                document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                            });
+                            recommendationsList.appendChild(li);
+                        });
+                        recommendationsContainer.classList.remove('hidden');
+                    } else { recommendationsContainer.classList.add('hidden'); }
+                } else { recommendationsContainer.classList.add('hidden'); }
+            });
+
+            searchButton.addEventListener('click', () => {
+                const query = searchInput.value.trim().toLowerCase();
+                const drugId = drugNameMap[query];
+                showSection('drug-details-section');
+                renderDrugInfo(drugId, drugData);
+                document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            diseaseGridContainer.addEventListener('click', e => {
+                e.preventDefault();
+                const diseaseLink = e.target.closest('.disease-link');
+                if (diseaseLink) {
+                    const diseaseId = diseaseLink.dataset.diseaseId;
+                    showSection('disease-details-section');
+                    renderDiseaseInfo(diseaseId, diseaseData, drugData); 
+                    document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            diseaseSearchInput.addEventListener('input', () => {
+                const searchTerm = diseaseSearchInput.value.toLowerCase().trim();
+                const allDiseaseCards = diseaseGridContainer.querySelectorAll('.disease-link');
+                allDiseaseCards.forEach(card => {
+                    const diseaseName = diseaseData[card.dataset.diseaseId].name.toLowerCase();
+                    if (diseaseName.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            diseaseDetailsSection.addEventListener('click', (event) => {
+                event.preventDefault();
+                const drugLink = event.target.closest('.drug-link');
+                if (drugLink) {
+                    showSection('drug-details-section');
+                    renderDrugInfo(drugLink.dataset.drugId, drugData);
+                    document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            document.querySelectorAll('header nav a, footer a').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    if (e.target.dataset.section) {
+                        showSection(e.target.dataset.section);
+                    }
+                });
+            });
+
+            document.addEventListener('click', e => { 
+                const recommendationsContainer = document.getElementById('recommendations-container');
+                const searchInput = document.getElementById('search-input');
+                if (!searchInput.contains(e.target) && !recommendationsContainer.contains(e.target)) { 
+                    recommendationsContainer.classList.add('hidden'); 
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,2104 @@
+{
+  "hypertension": {
+    "name": "Hypertension (High Blood Pressure)",
+    "overview": "Hypertension is a common condition in which the long-term force of the blood against your artery walls is high enough that it may eventually cause health problems, such as heart disease. Blood pressure is determined both by the amount of blood your heart pumps and the amount of resistance to blood flow in your arteries.",
+    "etiology": {
+      "summary": "Etiology is classified as either primary (essential) or secondary.",
+      "primary": "Over 90% of cases are primary hypertension, which has no single identifiable cause but is linked to genetics, high-salt diet, obesity, and lack of exercise.",
+      "secondary": "A smaller percentage of cases are secondary hypertension, caused by an underlying condition such as kidney disease, thyroid problems, or obstructive sleep apnea."
+    },
+    "types": [
+      {
+        "name": "Stage 1 Hypertension",
+        "details": "Systolic pressure ranging from 130-139 mm Hg or diastolic pressure from 80-89 mm Hg."
+      },
+      {
+        "name": "Stage 2 Hypertension",
+        "details": "Systolic pressure 140 mm Hg or higher or diastolic pressure 90 mm Hg or higher."
+      },
+      {
+        "name": "Hypertensive Crisis",
+        "details": "A severe increase in blood pressure (systolic 180 or higher OR diastolic 120 or higher) that can lead to a stroke. Requires immediate medical attention."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Usually asymptomatic (the 'silent killer')",
+      "Headaches (in severe cases)",
+      "Shortness of breath",
+      "Dizziness",
+      "Nosebleeds (in hypertensive crisis)"
+    ],
+    "pathophysiologySteps": [
+      "Complex interplay of genetic and environmental factors leads to dysfunction in cardiovascular and renal systems.",
+      "Increased sympathetic nervous system (SNS) activity increases heart rate and vasoconstriction.",
+      "Over-activity of the Renin-Angiotensin-Aldosterone System (RAAS) causes sodium/water retention and systemic vasoconstriction.",
+      "This leads to increased peripheral vascular resistance and cardiac output.",
+      "Sustained high pressure causes vascular remodeling (stiffening of arteries), further perpetuating the cycle."
+    ],
+    "riskFactors": [
+      "Age (risk increases with age)",
+      "Family history",
+      "Obesity",
+      "High-sodium diet",
+      "Lack of physical activity",
+      "Tobacco use",
+      "Excessive alcohol consumption",
+      "Chronic kidney disease"
+    ],
+    "treatmentContraindications": [
+      "**ACE Inhibitors/ARBs:** Contraindicated in pregnancy (Boxed Warning) and in patients with a history of angioedema.",
+      "**Beta-Blockers (Nonselective):** Contraindicated in patients with asthma or severe bradycardia.",
+      "**Thiazide Diuretics:** Contraindicated in patients with a sulfa allergy."
+    ],
+    "standardTreatment": [
+      {
+        "class": "ACE Inhibitors",
+        "drugs": "Lisinopril, Ramipril, Enalapril",
+        "dosage": "e.g., Lisinopril 10-40 mg once daily"
+      },
+      {
+        "class": "Angiotensin II Receptor Blockers (ARBs)",
+        "drugs": "Losartan, Valsartan, Olmesartan",
+        "dosage": "e.g., Losartan 50-100 mg once daily"
+      },
+      {
+        "class": "Thiazide Diuretics",
+        "drugs": "Hydrochlorothiazide (HCTZ), Chlorthalidone",
+        "dosage": "e.g., HCTZ 12.5-25 mg once daily"
+      },
+      {
+        "class": "Calcium Channel Blockers (Dihydropyridine)",
+        "drugs": "Amlodipine, Nifedipine",
+        "dosage": "e.g., Amlodipine 5-10 mg once daily"
+      },
+      {
+        "class": "Beta-Blockers",
+        "drugs": "Metoprolol, Atenolol, Carvedilol",
+        "dosage": "e.g., Metoprolol Succinate 25-100 mg once daily"
+      }
+    ],
+    "lifestyleModifications": [
+      "**DASH Diet:** Eat a diet rich in fruits, vegetables, and whole grains, and low in saturated fat and cholesterol.",
+      "**Reduce Sodium:** Limit sodium intake to less than 1,500 - 2,300 mg per day.",
+      "**Physical Activity:** Aim for at least 150 minutes of moderate-intensity aerobic exercise per week (e.g., brisk walking).",
+      "**Limit Alcohol:** If you drink, do so in moderation (up to one drink per day for women, two for men).",
+      "**Quit Smoking:** Smoking raises blood pressure and damages blood vessels.",
+      "**Manage Weight:** Losing even a small amount of weight (5-10 lbs) can significantly lower blood pressure.",
+      "**Reduce Stress:** Practice healthy coping techniques like meditation, yoga, or deep breathing.",
+      "**Monitor at Home:** Use a home blood pressure monitor to track your levels and share with your doctor.",
+      "**Ensure Adequate Sleep:** Poor sleep quality can negatively affect blood pressure.",
+      "**Limit Caffeine:** While its long-term effect is debatable, caffeine can cause short-term spikes in blood pressure."
+    ],
+    "searchKeywords": ["hypertension", "high blood pressure"]
+  },
+  "gout": {
+    "name": "Gout",
+    "overview": "A common and complex form of arthritis characterized by sudden, severe attacks of pain, swelling, redness, and tenderness in the joints, often the joint at the base of the big toe.",
+    "etiology": {
+      "summary": "Caused by hyperuricemia, a condition where there is too much uric acid in the blood. Uric acid can form sharp, needle-like crystals (monosodium urate) in a joint or surrounding tissue, causing pain and inflammation."
+    },
+    "types": [],
+    "signsAndSymptoms": [
+      "Intense joint pain (often in the big toe)",
+      "Swelling and redness",
+      "Lingering discomfort",
+      "Limited range of motion"
+    ],
+    "pathophysiologySteps": [
+      "Overproduction or underexcretion of uric acid leads to hyperuricemia.",
+      "Uric acid crystals precipitate in the joint space (synovial fluid).",
+      "The immune system recognizes these crystals as foreign bodies.",
+      "Neutrophils are recruited to the site and attempt to phagocytose the crystals, releasing pro-inflammatory cytokines.",
+      "This immune response causes a rapid, painful inflammatory cascade known as a gout flare."
+    ],
+    "riskFactors": [
+      "Diet high in purines (red meat, seafood)",
+      "High alcohol consumption (especially beer)",
+      "Obesity",
+      "Hypertension",
+      "Use of certain medications (e.g., thiazide diuretics)",
+      "Family history"
+    ],
+    "treatmentContraindications": [
+      "**Allopurinol:** Do not start during an acute flare. Contraindicated in patients with the HLA-B*5801 allele (high risk of SJS).",
+      "**NSAIDs:** Contraindicated in patients with active peptic ulcer disease or severe renal impairment.",
+      "**Colchicine:** Requires dose adjustment in renal impairment and has many drug interactions (CYP3A4)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Xanthine Oxidase Inhibitors (Prophylaxis)",
+        "drugs": "Allopurinol, Febuxostat",
+        "dosage": "e.g., Allopurinol 100-300 mg once daily"
+      },
+      {
+        "class": "NSAIDs (Acute Flare)",
+        "drugs": "Indomethacin, Naproxen, Celecoxib",
+        "dosage": "e.g., Naproxen 500 mg twice daily"
+      },
+      {
+        "class": "Anti-inflammatory (Acute Flare)",
+        "drugs": "Colchicine",
+        "dosage": "1.2 mg at first sign of flare, followed by 0.6 mg one hour later"
+      },
+      {
+        "class": "Corticosteroids (Acute Flare)",
+        "drugs": "Prednisone, Triamcinolone (injection)",
+        "dosage": "e.g., Prednisone 30-40 mg daily for 3-5 days"
+      }
+    ],
+    "lifestyleModifications": [
+      "Limit high-purine foods (e.g., red meat, organ meats, certain seafood like anchovies).",
+      "Limit alcohol, especially beer and spirits.",
+      "Avoid high-fructose corn syrup (found in many sugary drinks).",
+      "Maintain a healthy weight; gradual weight loss can lower uric acid levels.",
+      "Stay well-hydrated by drinking plenty of water.",
+      "Eat more complex carbohydrates, fruits (especially cherries), and vegetables.",
+      "Choose low-fat or fat-free dairy products.",
+      "Exercise regularly to maintain weight and joint health.",
+      "Protect affected joints from trauma.",
+      "Discuss your medications with your doctor, as some (like diuretics) can raise uric acid."
+    ],
+    "searchKeywords": ["gout", "hyperuricemia"]
+  },
+  "asthma": {
+    "name": "Asthma",
+    "overview": "A chronic condition in which your airways narrow, swell, and may produce extra mucus. This can make breathing difficult and trigger coughing, a whistling sound (wheezing) when you breathe out, and shortness of breath.",
+    "etiology": {
+      "summary": "The exact cause is unknown, but it's believed to be a combination of genetic predisposition and environmental factors (allergens, viral infections)."
+    },
+    "types": [
+      {
+        "name": "Allergic (Extrinsic) Asthma",
+        "details": "Triggered by allergens like pollen, dust mites, pet dander, or mold."
+      },
+      {
+        "name": "Non-Allergic (Intrinsic) Asthma",
+        "details": "Triggered by factors other than allergens, such as stress, exercise, cold air, or viral infections."
+      },
+      {
+        "name": "Exercise-Induced Bronchoconstriction (EIB)",
+        "details": "Airway narrowing that occurs during or shortly after strenuous exercise."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Shortness of breath",
+      "Chest tightness or pain",
+      "Wheezing (a whistling sound when exhaling)",
+      "Coughing, especially at night or early in the morning"
+    ],
+    "pathophysiologySteps": [
+      "A trigger (e.g., allergen) is encountered by a sensitized individual.",
+      "This causes an immune response and the release of inflammatory mediators (histamine, leukotrienes).",
+      "This leads to the 'Early Phase': acute bronchoconstriction (airway muscles tighten) and mucus production.",
+      "Hours later, the 'Late Phase' occurs: infiltration of inflammatory cells (eosinophils, T-cells) into the airway.",
+      "This chronic inflammation causes airway hyperresponsiveness, making the airways sensitive to future triggers."
+    ],
+    "riskFactors": [
+      "Family history (genetics)",
+      "History of other allergic conditions (e.g., eczema, hay fever)",
+      "Exposure to tobacco smoke",
+      "Obesity",
+      "Frequent respiratory infections in childhood"
+    ],
+    "treatmentContraindications": [
+      "**Beta-Blockers (Nonselective):** Can cause bronchospasm and are generally contraindicated in patients with asthma.",
+      "**LABAs (e.g., Salmeterol):** BOXED WARNING - Must not be used as monotherapy for asthma; must always be combined with an inhaled corticosteroid."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Short-Acting Beta-Agonists (SABA) - 'Rescue Inhaler'",
+        "drugs": "Albuterol, Levalbuterol",
+        "dosage": "1-2 puffs every 4-6 hours as needed for symptoms"
+      },
+      {
+        "class": "Inhaled Corticosteroids (ICS) - 'Controller'",
+        "drugs": "Fluticasone, Budesonide, Beclomethasone",
+        "dosage": "e.g., Fluticasone 110-220 mcg inhaled twice daily"
+      },
+      {
+        "class": "Long-Acting Beta-Agonists (LABA) - 'Controller'",
+        "drugs": "(Must be in a combination inhaler with an ICS)",
+        "dosage": "e.g., Advair (Fluticasone/Salmeterol) 1 puff twice daily"
+      },
+      {
+        "class": "Leukotriene Modifiers",
+        "drugs": "Montelukast",
+        "dosage": "10 mg PO once daily in the evening"
+      },
+      {
+        "class": "Long-Acting Muscarinic Antagonists (LAMA)",
+        "drugs": "Tiotropium",
+        "dosage": "1-2 puffs once daily (as an add-on therapy)"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Identify and Avoid Triggers:** Keep a journal to track allergens (pollen, dust), irritants (smoke, perfume), or conditions (cold air) that worsen symptoms.",
+      "**Use an Asthma Action Plan:** Work with your doctor to create a written plan that details your daily medications and what to do when symptoms flare up.",
+      "**Monitor Your Breathing:** Use a peak flow meter to track how well air is moving out of your lungs.",
+      "**Take Control Medications as Prescribed:** Do not skip your controller inhaler, even when you feel fine.",
+      "**Keep Your Rescue Inhaler With You:** Always have your SABA (e.g., albuterol) available for acute attacks.",
+      "**Get Vaccinated:** Get your annual flu shot and pneumonia vaccine to prevent respiratory infections that can trigger asthma.",
+      "**Maintain a Healthy Weight:** Obesity can worsen asthma symptoms.",
+      "**Manage GERD (Acid Reflux):** If you have acid reflux, treating it can improve asthma symptoms.",
+      "**Use Air Conditioning/Dehumidifier:** These can help reduce exposure to indoor allergens like dust mites and mold.",
+      "**Practice Breathing Exercises:** Techniques like diaphragmatic breathing can sometimes help improve lung function."
+    ],
+    "searchKeywords": ["asthma", "bronchospasm", "wheezing"]
+  },
+  "t2dm": {
+    "name": "Type 2 Diabetes Mellitus (T2DM)",
+    "overview": "A chronic metabolic disorder where the body cannot use insulin correctly (insulin resistance), and the pancreas eventually cannot make enough insulin to compensate. This leads to a buildup of sugar (hyperglycemia) in the blood, which can damage organs like the heart, kidneys, nerves, and eyes over time.",
+    "etiology": {
+      "summary": "Primarily the result of two interconnected issues: 1) Cells in muscle, fat, and the liver become resistant to insulin and don't take in enough sugar. 2) The pancreas cannot produce enough insulin to keep blood sugar in a healthy range.",
+      "primary": "Develops from a combination of genetic predisposition and lifestyle factors, particularly obesity and physical inactivity, which promote insulin resistance."
+    },
+    "types": [],
+    "signsAndSymptoms": [
+      "Urinating often (polyuria)",
+      "Feeling very thirsty (polydipsia)",
+      "Feeling very hungry (polyphagia)",
+      "Extreme fatigue",
+      "Blurry vision",
+      "Slow-healing sores or frequent infections",
+      "Numbness or tingling in the hands or feet (neuropathy)",
+      "Areas of darkened skin (Acanthosis nigricans), often in armpits and neck"
+    ],
+    "pathophysiologySteps": [
+      "Genetic and lifestyle factors (obesity, inactivity) lead to insulin resistance in peripheral tissues (muscle, fat, liver).",
+      "Pancreatic beta cells initially compensate by producing extra insulin (hyperinsulinemia).",
+      "Over time, beta cells become dysfunctional and cannot produce enough insulin to maintain glucose homeostasis.",
+      "Decreased incretin (e.g., GLP-1) effect, hyperglucagonemia, and increased renal glucose reabsorption also contribute.",
+      "Persistent hyperglycemia develops, leading to long-term microvascular and macrovascular complications."
+    ],
+    "riskFactors": [
+      "Being overweight or obese (main risk)",
+      "Storing fat mainly in the belly (waist > 40\" men, > 35\" women)",
+      "Physical inactivity",
+      "Family history (parent or sibling)",
+      "Race/Ethnicity (Black, Hispanic, Native American, Asian)",
+      "Age (risk increases after 35-40)",
+      "Prediabetes",
+      "History of gestational diabetes",
+      "Polycystic ovary syndrome (PCOS)",
+      "Hypertension or dyslipidemia (low HDL, high triglycerides)"
+    ],
+    "treatmentContraindications": [
+      "**Metformin:** Contraindicated in severe renal impairment (e.g., eGFR < 30) due to the risk of lactic acidosis.",
+      "**SGLT-2 Inhibitors (e.g., Empagliflozin):** Not recommended for glycemic control if eGFR is below 30-45 mL/min (varies by drug).",
+      "**Sulfonylureas:** Use with caution in elderly and in renal impairment due to high risk of hypoglycemia.",
+      "**GLP-1 Agonists:** Contraindicated in patients with a personal or family history of medullary thyroid carcinoma (MTC) or MEN 2."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Biguanide (First-line)",
+        "drugs": "Metformin",
+        "dosage": "e.g., 500-1000 mg twice daily with meals"
+      },
+      {
+        "class": "GLP-1 Receptor Agonists",
+        "drugs": "Semaglutide, Liraglutide, Dulaglutide",
+        "dosage": "e.g., Semaglutide 0.5-1 mg SC once weekly"
+      },
+      {
+        "class": "SGLT-2 Inhibitors",
+        "drugs": "Empagliflozin, Dapagliflozin, Canagliflozin",
+        "dosage": "e.g., Empagliflozin 10-25 mg once daily"
+      },
+      {
+        "class": "DPP-4 Inhibitors",
+        "drugs": "Sitagliptin, Linagliptin, Saxagliptin",
+        "dosage": "e.g., Sitagliptin 100 mg once daily"
+      },
+      {
+        "class": "Sulfonylureas",
+        "drugs": "Glipizide, Glimepiride, Glyburide",
+        "dosage": "e.g., Glipizide 5-10 mg daily"
+      },
+      {
+        "class": "Insulin (Basal and/or Prandial)",
+        "drugs": "Insulin Glargine, Insulin Lispro",
+        "dosage": "Varies significantly based on patient needs"
+      }
+    ],
+    "lifestyleModifications": [
+      "Adopt a healthy eating plan (e.g., portion control, low glycemic index foods).",
+      "Engage in regular physical activity (e.g., 150 minutes of moderate-intensity exercise per week).",
+      "Weight management, as losing excess weight is a primary goal.",
+      "Monitor blood sugar levels as recommended by your doctor.",
+      "Manage blood pressure and cholesterol levels."
+    ],
+    "searchKeywords": [
+      "diabetes",
+      "t2dm",
+      "hyperglycemia",
+      "insulin resistance"
+    ]
+  },
+  "gerd": {
+    "name": "Gastroesophageal Reflux Disease (GERD)",
+    "overview": "A long-term (chronic) condition where stomach acid persistently flows back up into the esophagus (acid reflux). This backwash can irritate the lining of the esophagus, causing symptoms like heartburn and potential complications if left untreated.",
+    "etiology": {
+      "summary": "Caused by a weak, damaged, or inappropriately relaxing lower esophageal sphincter (LES), the muscular valve between the esophagus and stomach. This dysfunction allows stomach contents to reflux into the esophagus.",
+      "secondary": "Can be caused or exacerbated by obesity (increased abdominal pressure), hiatal hernia, pregnancy, smoking, and certain medications."
+    },
+    "types": [],
+    "signsAndSymptoms": [
+      "Heartburn (acid indigestion): A burning chest pain, often worse after eating or lying down.",
+      "Regurgitation (acid or food coming back into the mouth), often with a bitter taste.",
+      "Nausea",
+      "Difficulty swallowing (dysphagia)",
+      "Chronic cough, laryngitis, or new/worsening asthma (especially at night).",
+      "Globus sensation (the feeling of a lump in the throat)."
+    ],
+    "pathophysiologySteps": [
+      "A trigger (e.g., large meal, recumbency) or underlying issue (e.g., weak LES, hiatal hernia) causes the lower esophageal sphincter (LES) to relax inappropriately.",
+      "Gastric contents (acid, pepsin, bile) reflux into the distal esophagus.",
+      "The esophageal mucosa, which is not protected against acid, becomes inflamed (esophagitis).",
+      "Chronic inflammation can lead to complications like erosions, ulcers, esophageal strictures, or a pre-cancerous change called Barrett's esophagus."
+    ],
+    "riskFactors": [
+      "Obesity or recent weight gain",
+      "Smoking (weakens the LES)",
+      "Pregnancy",
+      "Certain medications (e.g., bisphosphonates, some pain relievers)",
+      "Dietary triggers (fatty/fried foods, chocolate, caffeine, alcohol, spicy foods, tomato products)",
+      "Eating large meals or eating late at night"
+    ],
+    "treatmentContraindications": [
+      "**Proton Pump Inhibitors (PPIs):** Long-term use is associated with an increased risk of C. difficile infection, bone fractures, and hypomagnesemia.",
+      "**H2-Receptor Blockers (H2RAs):** Most require dose adjustment in moderate-to-severe renal impairment.",
+      "**Metoclopramide:** Boxed warning for tardive dyskinesia; should not be used for >12 weeks."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Antacids (Symptom relief)",
+        "drugs": "Calcium Carbonate (Tums), Magnesium/Aluminum Hydroxide (Maalox)",
+        "dosage": "As needed for mild, infrequent symptoms"
+      },
+      {
+        "class": "H2-Receptor Blockers (H2RAs)",
+        "drugs": "Famotidine, Cimetidine",
+        "dosage": "e.g., Famotidine 20-40 mg twice daily"
+      },
+      {
+        "class": "Proton Pump Inhibitors (PPIs)",
+        "drugs": "Omeprazole, Pantoprazole, Esomeprazole, Lansoprazole",
+        "dosage": "e.g., Omeprazole 20-40 mg once daily"
+      },
+      {
+        "class": "Prokinetics (Adjunct)",
+        "drugs": "Metoclopramide (use with caution)",
+        "dosage": "As prescribed, often before meals"
+      }
+    ],
+    "lifestyleModifications": [
+      "Lose excess weight.",
+      "Avoid trigger foods (e.g., fatty, spicy, chocolate, caffeine, alcohol).",
+      "Eat smaller, more frequent meals instead of large ones.",
+      "Avoid lying down for at least 2-3 hours after eating.",
+      "Elevate the head of the bed by 6-8 inches (using blocks, not just pillows).",
+      "Quit smoking.",
+      "Wear loose-fitting clothes to reduce pressure on the abdomen."
+    ],
+    "searchKeywords": [
+      "gerd",
+      "acid reflux",
+      "heartburn",
+      "esophagitis"
+    ]
+  },
+  "copd": {
+    "name": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "overview": "A common, preventable, and treatable chronic lung disease characterized by persistent respiratory symptoms and airflow limitation. This limitation is due to airway and/or alveolar abnormalities (e.g., emphysema, chronic bronchitis) usually caused by significant exposure to noxious particles or gases, most commonly cigarette smoke.",
+    "etiology": {
+      "summary": "Primarily caused by a chronic inflammatory response to inhaled toxins, most often long-term cigarette smoking.",
+      "secondary": "Other causes include exposure to secondhand smoke, air pollution, workplace dusts/fumes, and fumes from burning fuel for cooking.",
+      "primary": "A rare genetic condition, alpha-1-antitrypsin (AAT) deficiency, can also cause COPD, often at a younger age."
+    },
+    "types": [
+      {
+        "name": "Chronic Bronchitis",
+        "details": "Inflammation and narrowing of the bronchial tubes, leading to a chronic, productive cough and mucus hypersecretion. Defined clinically as a cough for 3 months in 2 consecutive years."
+      },
+      {
+        "name": "Emphysema",
+        "details": "Destruction of the fragile walls of the alveoli (air sacs), leading to loss of elastic recoil and trapped air. This reduces the surface area for gas exchange."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Persistent, productive cough (often the first symptom, may be clear, white, or yellow)",
+      "Dyspnea (shortness of breath), especially with physical activity",
+      "Wheezing or a whistling sound when breathing",
+      "Chest tightness",
+      "Lack of energy / fatigue",
+      "Frequent respiratory infections",
+      "Unintentional weight loss (in advanced disease)",
+      "Swelling in ankles, feet, or legs (cor pulmonale)"
+    ],
+    "pathophysiologySteps": [
+      "Inhalation of toxins (e.g., cigarette smoke) triggers a chronic inflammatory response in the airways and alveoli.",
+      "Inflammation leads to an imbalance of proteases and antiproteases, causing elastase-mediated destruction of alveolar walls (emphysema).",
+      "Inflammation in the airways also causes mucus hypersecretion (goblet cell hyperplasia), mucosal edema, and peribronchial fibrosis (chronic bronchitis).",
+      "These processes lead to progressive, irreversible airflow limitation and air trapping (hyperinflation)."
+    ],
+    "riskFactors": [
+      "Tobacco smoking (the main risk factor, up to 75% of cases)",
+      "Long-term exposure to lung irritants (secondhand smoke, air pollution, workplace fumes)",
+      "Age (most people are at least 40 when symptoms begin)",
+      "Genetics (Alpha-1 antitrypsin deficiency)",
+      "Asthma (especially combined with smoking)",
+      "Frequent respiratory infections in childhood"
+    ],
+    "treatmentContraindications": [
+      "**Nonselective Beta-Blockers (e.g., Propranolol):** Can cause bronchospasm and are generally contraindicated.",
+      "**Cardioselective Beta-Blockers (e.g., Carvedilol, Metoprolol):** Use with caution, but generally considered safe in stable COPD (e.g., for comorbid heart failure)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Short-Acting Bronchodilators (SABA/SAMA) - 'Reliever'",
+        "drugs": "Albuterol, Ipratropium",
+        "dosage": "e.g., Albuterol 1-2 puffs as needed for acute symptoms"
+      },
+      {
+        "class": "Long-Acting Muscarinic Antagonist (LAMA) - 'Controller'",
+        "drugs": "Tiotropium, Umeclidinium, Aclidinium",
+        "dosage": "e.g., Tiotropium 1-2 puffs once daily"
+      },
+      {
+        "class": "Long-Acting Beta-Agonist (LABA) - 'Controller'",
+        "drugs": "Salmeterol, Formoterol, Olodaterol",
+        "dosage": "e.g., Salmeterol 1 puff twice daily"
+      },
+      {
+        "class": "Inhaled Corticosteroid (ICS) - (Add-on for high-risk)",
+        "drugs": "Fluticasone, Budesonide (Used in combination with LABA/LAMA)",
+        "dosage": "Varies by combination product"
+      },
+      {
+        "class": "Oxygen Therapy",
+        "drugs": "N/A",
+        "dosage": "For severe, chronic hypoxemia"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Quit smoking.** This is the single most important step to slow disease progression.",
+      "Avoid lung irritants (secondhand smoke, air pollution, fumes, and dust).",
+      "Get vaccinations (annual flu shot, pneumococcal vaccine, COVID-19).",
+      "Engage in physical activity and consider a pulmonary rehabilitation program.",
+      "Eat a balanced diet and maintain a healthy weight (malnutrition and obesity can both worsen symptoms).",
+      "Stay hydrated to help keep mucus thin.",
+      "Practice breathing exercises."
+    ],
+    "searchKeywords": [
+      "copd",
+      "emphysema",
+      "chronic bronchitis",
+      "dyspnea"
+    ]
+  },"cap": {
+    "name": "Community-Acquired Pneumonia (CAP)",
+    "definition": "An acute infection of the pulmonary parenchyma (the lung tissue) in a patient who has acquired the infection outside of a hospital or long-term care facility.",
+    "overview": "Community-acquired pneumonia (CAP) is a common and serious illness. It is defined as pneumonia acquired outside of a hospital or <48 hours after hospital admission. The most common bacterial pathogen is **Streptococcus pneumoniae**, followed by *Haemophilus influenzae* and atypical pathogens like *Mycoplasma pneumoniae* and *Legionella pneumophila*.",
+    "etiology": {
+      "summary": "Caused by a wide array of pathogens, including bacteria, viruses, and fungi. The specific pathogen is often not identified, so treatment is typically empirical.",
+      "primary": "Most commonly caused by bacteria, especially *Streptococcus pneumoniae*. Other common causes include *H. influenzae*, *Mycoplasma pneumoniae*, *Chlamydia pneumoniae*, and respiratory viruses.",
+      "secondary": "In patients with specific risk factors, *Staphylococcus aureus* (including MRSA) or *Pseudomonas aeruginosa* may be the cause."
+    },
+    "types": [
+      {
+        "name": "Typical Pneumonia",
+        "details": "Often presents with sudden onset of fever, productive cough (purulent sputum), and pleuritic chest pain. Most commonly associated with *S. pneumoniae*."
+      },
+      {
+        "name": "Atypical Pneumonia",
+        "details": "Often presents with a more gradual onset, a dry cough, and extrapulmonary symptoms (e.g., headache, myalgia). Associated with *Mycoplasma pneumoniae*, *Chlamydia pneumoniae*, and *Legionella*."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Fever or hypothermia",
+      "Productive cough (with purulent sputum) or dry cough",
+      "Dyspnea (shortness of breath) and tachypnea (rapid breathing)",
+      "Pleuritic chest pain (sharp pain on inspiration)",
+      "New focal chest signs on examination (e.g., rales, rhonchi, bronchial breath sounds)",
+      "Tachycardia (rapid heart rate)",
+      "Confusion or disorientation (especially in the elderly)"
+    ],
+    "pathophysiologySteps": [
+      "The patient inhales or aspirates virulent microorganisms into the lungs.",
+      "The pathogens overcome the host's pulmonary defense mechanisms (e.g., cough reflex, mucociliary clearance, alveolar macrophages).",
+      "Pathogens proliferate in the alveoli, triggering a potent inflammatory response.",
+      "Inflammatory mediators and immune cells are recruited to the site, leading to a capillary leak.",
+      "Alveoli fill with fluid, white blood cells, and cellular debris, causing pulmonary consolidation and impairing gas exchange, which results in hypoxemia."
+    ],
+    "riskFactors": [
+      "Advanced age (≥65 years)",
+      "Chronic comorbidities (e.g., COPD, asthma, heart failure, diabetes)",
+      "Smoking and alcohol abuse",
+      "Immunosuppression (e.g., from disease or medications)",
+      "Recent antibiotic use or viral respiratory infection"
+    ],
+    "treatmentContraindications": [
+      "**Macrolides (e.g., Azithromycin):** Risk of QT prolongation; use with caution in patients with arrhythmias or on other QT-prolonging drugs.",
+      "**Fluoroquinolones (e.g., Levofloxacin):** Boxed warnings for tendinitis/tendon rupture, peripheral neuropathy, and CNS effects. Risk of QT prolongation.",
+      "**Beta-Lactams (e.g., Amoxicillin):** Contraindicated in patients with a history of severe anaphylactic allergy to penicillins."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Outpatient (No comorbidities)",
+        "drugs": "Amoxicillin OR Doxycycline OR a Macrolide (if local resistance is <25%)",
+        "dosage": "e.g., Amoxicillin 1 g three times daily"
+      },
+      {
+        "class": "Outpatient (With comorbidities)",
+        "drugs": "Combination: Amoxicillin/clavulanate OR a Cephalosporin (e.g., Cefpodoxime) PLUS a Macrolide OR Doxycycline. Monotherapy: A respiratory Fluoroquinolone (e.g., Levofloxacin).",
+        "dosage": "e.g., Amoxicillin/clavulanate 875/125 mg twice daily + Azithromycin 500 mg Day 1, then 250 mg daily"
+      },
+      {
+        "class": "Inpatient (Non-ICU)",
+        "drugs": "Combination: A beta-lactam (e.g., Ceftriaxone, Ampicillin/sulbactam) PLUS a Macrolide OR Doxycycline. Monotherapy: A respiratory Fluoroquinolone.",
+        "dosage": "e.g., Ceftriaxone 1-2 g IV daily + Azithromycin 500 mg IV daily"
+      },
+      {
+        "class": "Inpatient (ICU)",
+        "drugs": "A beta-lactam (e.g., Ceftriaxone) PLUS either a Macrolide OR a respiratory Fluoroquinolone.",
+        "dosage": "If Pseudomonas risk: Use an anti-pseudomonal beta-lactam (e.g., Piperacillin/tazobactam, Cefepime) + Ciprofloxacin/Levofloxacin."
+      }
+    ],
+    "lifestyleModifications": [
+      "Smoking cessation is critical to reduce risk and improve lung health.",
+      "Get vaccinated (e.g., pneumococcal vaccine, annual influenza vaccine).",
+      "Practice good hygiene (e.g., hand washing) to prevent infections."
+    ],
+    "searchKeywords": [
+      "cap",
+      "community acquired pneumonia",
+      "pneumonia",
+      "streptococcus pneumoniae",
+      "curb-65"
+    ]
+  },
+  "pud": {
+    "name": "Peptic Ulcer Disease (PUD)",
+    "definition": "A condition characterized by open sores, or ulcers, in the lining of the stomach (gastric ulcer) or the first part of the small intestine, the duodenum (duodenal ulcer).",
+    "overview": "Peptic ulcer disease involves a break in the inner lining of the gastrointestinal tract that extends through the muscularis propria layer. This damage is caused by a persistent imbalance between gastroduodenal mucosal defense mechanisms and aggressive factors like gastric acid and pepsin. The two most common causes by far are infection with the bacterium *Helicobacter pylori* and long-term use of nonsteroidal anti-inflammatory drugs (NSAIDs).",
+    "etiology": {
+      "summary": "PUD is most commonly caused by **Helicobacter pylori infection** or the use of **NSAIDs**. These disrupt the normal mucosal defense and repair mechanisms, making the lining vulnerable to gastric acid.",
+      "primary": "*H. pylori* infection is a major cause, as the bacterium colonizes the gastric mucosa and causes chronic inflammation and epithelial cell damage. NSAIDs cause injury by inhibiting cyclooxygenase-1 (COX-1), which reduces the production of protective prostaglandins in the stomach.",
+      "secondary": "Rare causes include Zollinger-Ellison syndrome (a tumor that causes massive acid hypersecretion), stress (in critically ill patients), viral infections, and radiation therapy."
+    },
+    "types": [
+      {
+        "name": "Duodenal Ulcer (DU)",
+        "details": "More common than gastric ulcers. Pain typically occurs 2-3 hours *after* a meal (when the stomach is empty) and is often relieved by food or antacids. *H. pylori* is the cause in >90% of cases."
+      },
+      {
+        "name": "Gastric Ulcer (GU)",
+        "details": "Pain typically occurs 15-30 minutes *after* eating, as food stimulates acid secretion. NSAID use is a more common cause than in DUs. These have a higher risk of malignancy and should be biopsied."
+      }
+    ],
+    "signsAndSymptoms": [
+      "**Epigastric abdominal pain** (the hallmark symptom), often described as a burning or gnawing sensation.",
+      "Bloating or abdominal fullness",
+      "Nausea and vomiting",
+      "Weight loss (more common with gastric ulcers due to pain with eating)",
+      "Alarm symptoms: Hematemesis (vomiting blood), melena (black, tarry stools), progressive dysphagia (difficulty swallowing), or iron deficiency anemia."
+    ],
+    "pathophysiologySteps": [
+      "**H. pylori-induced:** The bacteria secrete urease, creating an alkaline cloud to survive acid. It then burrows into the mucosa, causing an inflammatory response (gastritis) that damages epithelial cells and weakens the mucosal barrier.",
+      "**NSAID-induced (Systemic):** NSAIDs inhibit the COX-1 enzyme, which is responsible for synthesizing protective prostaglandins. This reduces bicarbonate secretion, mucus production, and mucosal blood flow.",
+      "**NSAID-induced (Topical):** As weak acids, NSAIDs can also become trapped in epithelial cells, causing direct cellular injury and increasing permeability.",
+      "The weakened mucosal barrier is then eroded by endogenous gastric acid and pepsin, leading to ulcer formation."
+    ],
+    "riskFactors": [
+      "Infection with *H. pylori*",
+      "Use of NSAIDs, especially chronic use",
+      "Use of aspirin (even low-dose)",
+      "Concomitant use of corticosteroids, anticoagulants, or SSRIs with NSAIDs",
+      "Cigarette smoking (impairs healing and increases risk)",
+      "First-degree relative with PUD"
+    ],
+    "treatmentContraindications": [
+      "**PPIs:** Long-term use is associated with C. difficile, bone fractures, and hypomagnesemia. Omeprazole and esomeprazole are CYP2C19 inhibitors and can reduce the efficacy of clopidogrel.",
+      "**Bismuth Quadruple Therapy:** Bismuth can cause black stools/tongue. Metronidazole is contraindicated with alcohol (disulfiram-like reaction). Tetracycline is contraindicated in pregnancy and children < 8.",
+      "**Clarithromycin Triple Therapy:** Clarithromycin is contraindicated with certain statins (lovastatin, simvastatin) and can cause QT prolongation."
+    ],
+    "standardTreatment": [
+      {
+        "class": "H. pylori Eradication (Bismuth Quadruple)",
+        "drugs": "PPI twice daily + Bismuth subsalicylate + Metronidazole + Tetracycline",
+        "dosage": "All taken four times daily (except PPI) for 10-14 days"
+      },
+      {
+        "class": "H. pylori Eradication (Clarithromycin Triple)",
+        "drugs": "PPI twice daily + Clarithromycin 500 mg twice daily + Amoxicillin 1 g twice daily",
+        "dosage": "Taken for 14 days. Only for use in areas with low clarithromycin resistance."
+      },
+      {
+        "class": "NSAID-induced Ulcer (Treatment)",
+        "drugs": "Proton Pump Inhibitor (PPI)",
+        "dosage": "e.g., Omeprazole 20-40 mg daily for 4-8 weeks. NSAID should be discontinued if possible."
+      },
+      {
+        "class": "NSAID-induced Ulcer (Prevention)",
+        "drugs": "PPI or Misoprostol",
+        "dosage": "Co-prescribed with the NSAID for high-risk patients."
+      }
+    ],
+    "lifestyleModifications": [
+      "Discontinue NSAID use if possible.",
+      "Avoid smoking, as it impairs ulcer healing.",
+      "Avoid dietary triggers that worsen symptoms (e.g., alcohol, spicy foods, caffeine).",
+      "Reduce stress."
+    ],
+    "searchKeywords": [
+      "pud",
+      "peptic ulcer disease",
+      "h pylori",
+      "nsaid ulcer"
+    ]
+  },
+  "stroke": {
+    "name": "Acute Ischemic Stroke",
+    "definition": "A sudden loss of neurological function caused by an interruption of blood flow to the brain, leading to focal ischemia and subsequent brain tissue death (infarction).",
+    "overview": "An ischemic stroke, which accounts for about 87% of all strokes, occurs when a blood vessel supplying the brain is blocked by a blood clot or plaque buildup. This blockage cuts off the oxygen and nutrient supply, causing brain cells in the affected area (the ischemic core) to die within minutes. A surrounding area, the 'penumbra,' is at risk but may be salvageable if blood flow is restored quickly. This makes stroke a time-critical medical emergency.",
+    "etiology": {
+      "summary": "Caused by the occlusion of a cerebral artery, which can originate in two main ways: a thrombotic stroke or an embolic stroke.",
+      "primary": "**Thrombotic Stroke:** A blood clot (thrombus) forms *within* a brain artery, often at a site of atherosclerotic plaque buildup.",
+      "secondary": "**Embolic Stroke:** A blood clot or other debris (embolus) forms *elsewhere* in the body (most commonly the heart, e.g., in atrial fibrillation) and travels to the brain, lodging in a narrower artery."
+    },
+    "types": [
+      {
+        "name": "Thrombotic Stroke",
+        "details": "A clot forms directly in a brain artery, usually one narrowed by atherosclerosis. Often has a slower onset of symptoms."
+      },
+      {
+        "name": "Embolic Stroke",
+        "details": "A clot or debris from another part of the body (e.g., the heart in atrial fibrillation) travels to the brain and blocks a vessel. Typically has a very sudden onset."
+      },
+      {
+        "name": "Transient Ischemic Attack (TIA)",
+        "details": "A 'mini-stroke' where blockage is temporary and blood flow is restored before permanent damage occurs. Symptoms are identical to a stroke but resolve fully, usually in minutes to hours. It is a major warning sign for a future stroke."
+      }
+    ],
+    "signsAndSymptoms": [
+      "**B.E. F.A.S.T. Acronym:**",
+      "**B**alance: Sudden loss of balance or coordination",
+      "**E**yes: Sudden trouble seeing in one or both eyes",
+      "**F**ace Drooping: Sudden numbness or drooping on one side of the face",
+      "**A**rm Weakness: Sudden weakness or numbness in one arm",
+      "**S**peech Difficulty: Sudden confusion, slurred speech, or trouble understanding",
+      "**T**ime to call 911: Note the time symptoms first appeared",
+      "Sudden severe headache with no known cause"
+    ],
+    "pathophysiologySteps": [
+      "A cerebral artery is occluded by a thrombus or embolus.",
+      "Blood flow to a region of the brain ceases, leading to a core of tissue with severe ischemia. Cells in this core are deprived of oxygen and glucose and die within minutes.",
+      "A surrounding area (the 'ischemic penumbra') has collateral blood flow and is dysfunctional but still viable.",
+      "The primary goal of acute treatment is to restore blood flow (recanalization) to the penumbra before this tissue also undergoes irreversible infarction.",
+      "This ischemic cascade also triggers inflammation and cytotoxic edema, which can worsen brain injury."
+    ],
+    "riskFactors": [
+      "**Hypertension (High Blood Pressure)** (the single most important modifiable risk factor)",
+      "Atrial Fibrillation (major risk for embolic stroke)",
+      "Diabetes Mellitus",
+      "Hyperlipidemia (high cholesterol)",
+      "Cigarette smoking",
+      "Obesity and physical inactivity",
+      "Age (risk increases with age)",
+      "Family history of stroke"
+    ],
+    "treatmentContraindications": [
+      "**Alteplase (tPA) Contraindications:** Time of symptom onset > 4.5 hours (or unknown), evidence of intracranial hemorrhage on CT scan, active internal bleeding, recent intracranial/spinal surgery or head trauma, severe uncontrolled hypertension (>185/110 mmHg), or current use of anticoagulants with elevated INR/aPTT."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Acute Treatment (Thrombolysis)",
+        "drugs": "Alteplase (tPA)",
+        "dosage": "0.9 mg/kg (max 90 mg) IV. 10% given as a bolus over 1 min, remaining 90% infused over 60 min. **Must be given within 3 to 4.5 hours of symptom onset**."
+      },
+      {
+        "class": "Acute Treatment (Mechanical)",
+        "drugs": "Endovascular Thrombectomy",
+        "dosage": "A procedure to physically remove a large clot, typically in a large vessel. Can be done up to 24 hours after onset in select patients."
+      },
+      {
+        "class": "Secondary Prevention (Non-cardioembolic)",
+        "drugs": "Antiplatelets: Aspirin, Clopidogrel, Aspirin/Dipyridamole",
+        "dosage": "e.g., Aspirin 81-325 mg daily OR Clopidogrel 75 mg daily."
+      },
+      {
+        "class": "Secondary Prevention (Cardioembolic, e.g., AFib)",
+        "drugs": "Anticoagulants: Warfarin, Apixaban, Rivaroxaban, Dabigatran",
+        "dosage": "e.g., Apixaban 5 mg twice daily. Anticoagulants are preferred over antiplatelets for AFib."
+      }
+    ],
+    "lifestyleModifications": [
+      "Strict blood pressure control (goal < 130/80 mmHg).",
+      "Manage hyperlipidemia with statin therapy.",
+      "Achieve glycemic control in patients with diabetes.",
+      "Smoking cessation.",
+      "Adopt a healthy diet (e.g., DASH, Mediterranean) low in sodium and saturated fats.",
+      "Regular physical activity.",
+      "Weight loss if overweight or obese."
+    ],
+    "searchKeywords": [
+      "stroke",
+      "ischemic stroke",
+      "cva",
+      "tia",
+      "alteplase",
+      "tpa"
+    ]
+  },
+  "mdd": {
+    "name": "Major Depressive Disorder (MDD)",
+    "definition": "A common and serious medical illness that negatively affects how you feel, the way you think, and how you act, characterized by a persistent feeling of sadness or a loss of interest in activities.",
+    "overview": "Major Depressive Disorder, also known as clinical depression, is a mood disorder that causes distressing symptoms that affect daily life, including work, school, and relationships. It is not just a passing case of 'the blues' but a complex condition believed to stem from a combination of genetic, biological, environmental, and psychological factors. Diagnosis is based on DSM-5 criteria, requiring at least five symptoms to be present for at least two weeks.",
+    "etiology": {
+      "summary": "The exact cause is unknown, but it is believed to be multifactorial. The 'monoamine hypothesis' suggests it is related to a deficiency of key neurotransmitters (serotonin, norepinephrine, dopamine) in the brain.",
+      "primary": "Genetic factors account for about 40% of the risk. Biological factors include neurotransmitter imbalance, hormonal changes, and inflammatory processes.",
+      "secondary": "Environmental factors like adverse childhood experiences, trauma, or chronic stress are major contributors. It can also be secondary to other health problems (e.g., chronic illness, HIV, asthma) or induced by certain medications (e.g., beta-blockers, interferons)."
+    },
+    "types": [
+      {
+        "name": "DSM-5 Diagnostic Criteria (5+ required)",
+        "details": "1. Depressed mood (required) OR 2. Loss of interest/pleasure (anhedonia) (required). Plus: 3. Significant weight loss/gain or appetite change. 4. Insomnia or hypersomnia. 5. Psychomotor agitation or retardation. 6. Fatigue or loss of energy. 7. Feelings of worthlessness or guilt. 8. Diminished ability to think or concentrate. 9. Recurrent thoughts of death or suicide."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Persistent sad, anxious, or 'empty' mood",
+      "Loss of interest or pleasure in hobbies and activities (anhedonia)",
+      "Feelings of hopelessness, pessimism, guilt, worthlessness, or helplessness",
+      "Fatigue and decreased energy",
+      "Difficulty concentrating, remembering, or making decisions",
+      "Changes in sleep (insomnia, early-morning awakening, or oversleeping)",
+      "Changes in appetite or weight (loss or gain)",
+      "Thoughts of death or suicide",
+      "Restlessness or irritability"
+    ],
+    "pathophysiologySteps": [
+      "**Monoamine Hypothesis:** A functional deficiency of serotonin (5-HT), norepinephrine (NE), and/or dopamine (DA) in the CNS.",
+      "**Neurotrophic Hypothesis:** Reduced levels of brain-derived neurotrophic factor (BDNF) lead to neuronal atrophy (especially in the hippocampus) and decreased neurogenesis.",
+      "**HPA Axis Dysfunction:** Chronic stress leads to hyperactivity of the hypothalamic-pituitary-adrenal (HPA) axis, resulting in elevated cortisol levels which can be neurotoxic.",
+      "**Inflammation:** Increased levels of pro-inflammatory cytokines (e.g., C-reactive protein) may contribute to the development of depression."
+    ],
+    "riskFactors": [
+      "Personal or family history of depression",
+      "Adverse childhood experiences or major life trauma/stress",
+      "Female sex (more common in women)",
+      "Having other serious chronic illnesses (e.g., cancer, heart disease)",
+      "Substance use (alcohol or drugs)"
+    ],
+    "treatmentContraindications": [
+      "**General:** All antidepressants have a boxed warning for increased suicidal thinking in children, adolescents, and young adults (up to age 24).",
+      "**MAOIs:** Contraindicated with many other drugs (SSRIs, SNRIs, TCAs, triptans, meperidine) due to risk of serotonin syndrome. Also contraindicated with tyramine-rich foods (hypertensive crisis).",
+      "**SSRIs/SNRIs:** Contraindicated with MAOIs. Use with caution with other serotonergic drugs or blood thinners (increased bleeding risk).",
+      "**TCAs:** Contraindicated in acute recovery post-MI. High risk of overdose (cardiotoxicity)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Selective Serotonin Reuptake Inhibitors (SSRIs) - First-line",
+        "drugs": "Sertraline, Escitalopram, Fluoxetine, Citalopram",
+        "dosage": "e.g., Sertraline 50-200 mg daily"
+      },
+      {
+        "class": "Serotonin-Norepinephrine Reuptake Inhibitors (SNRIs) - First-line",
+        "drugs": "Venlafaxine, Duloxetine, Desvenlafaxine",
+        "dosage": "e.g., Venlafaxine XR 75-225 mg daily"
+      },
+      {
+        "class": "Atypical Antidepressants",
+        "drugs": "Bupropion (NDRI), Mirtazapine (NaSSA)",
+        "dosage": "e.g., Bupropion XL 150-300 mg daily (less sexual side effects)"
+      },
+      {
+        "class": "Tricyclic Antidepressants (TCAs) - (Older, more side effects)",
+        "drugs": "Amitriptyline, Nortriptyline",
+        "dosage": "e.g., Nortriptyline 25-150 mg daily"
+      },
+      {
+        "class": "Monoamine Oxidase Inhibitors (MAOIs) - (Last-line, many interactions)",
+        "drugs": "Phenelzine, Tranylcypromine",
+        "dosage": "Requires specialist supervision and strict diet"
+      }
+    ],
+    "lifestyleModifications": [
+      "Psychotherapy (e.g., Cognitive Behavioral Therapy - CBT) is a first-line treatment, often combined with medication.",
+      "Regular physical exercise.",
+      "Maintain a healthy, balanced diet.",
+      "Ensure adequate sleep and manage stress.",
+      "Avoid alcohol and recreational drugs, as they can worsen depression."
+    ],
+    "searchKeywords": [
+      "mdd",
+      "depression",
+      "ssri",
+      "snri",
+      "major depressive disorder"
+    ]
+  },
+  "afib": {
+    "name": "Atrial Fibrillation (AFib)",
+    "definition": "A supraventricular tachyarrhythmia characterized by disorganized and rapid atrial electrical activity, which results in ineffective atrial contraction and an irregular, often rapid, ventricular response.",
+    "overview": "Atrial fibrillation is the most common cardiac arrhythmia worldwide. Instead of a single electrical impulse from the sinus node, multiple chaotic impulses are generated in the atria. This causes the atria to 'quiver' (fibrillate) rather than contract. The AV node is bombarded with these impulses and conducts them sporadically, leading to an 'irregularly irregular' heartbeat. The two main complications are 1) heart failure (from sustained rapid heart rate) and 2) thromboembolic stroke (from blood pooling and clotting in the non-contracting left atrial appendage).",
+    "etiology": {
+      "summary": "Caused by structural or electrophysiological abnormalities in the atria that promote disorganized electrical activity. This is often driven by underlying cardiovascular disease.",
+      "primary": "Long-standing hypertension is the most common risk factor, as it causes left atrial remodeling and stiffness. Other major causes include heart failure, valvular heart disease (especially mitral valve), coronary artery disease, and cardiomyopathies.",
+      "secondary": "Temporary or reversible causes include hyperthyroidism, excessive alcohol intake ('holiday heart'), post-cardiothoracic surgery, and pulmonary embolism."
+    },
+    "types": [
+      {
+        "name": "Paroxysmal AFib",
+        "details": "AFib that terminates spontaneously or with intervention within 7 days of onset."
+      },
+      {
+        "name": "Persistent AFib",
+        "details": "Continuous AFib that lasts for more than 7 days."
+      },
+      {
+        "name": "Long-standing Persistent AFib",
+        "details": "Continuous AFib that has lasted for more than 12 months."
+      },
+      {
+        "name": "Permanent AFib",
+        "details": "A joint decision by the patient and clinician to no longer pursue a rhythm-control strategy."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Often asymptomatic, especially in the elderly",
+      "Palpitations (a feeling of a fast, fluttering, or irregular heartbeat)",
+      "Dyspnea (shortness of breath) and fatigue, especially on exertion",
+      "Dizziness, lightheadedness, or syncope (fainting)",
+      "Chest pain or pressure (angina)",
+      "Reduced exercise tolerance"
+    ],
+    "pathophysiologySteps": [
+      "One or more triggers (e.g., premature atrial contractions) fire rapidly, often from the pulmonary veins.",
+      "This rapid firing initiates disorganized, re-entrant electrical circuits within the atrial tissue.",
+      "Underlying atrial disease (atrial remodeling) caused by risk factors (e.g., hypertension, heart failure) creates a 'substrate' (fibrosis, inflammation) that allows these re-entrant circuits to be sustained.",
+      "The atria fibrillate instead of contracting, and the AV node filters these chaotic impulses, leading to an irregular ventricular rhythm."
+    ],
+    "riskFactors": [
+      "**Age** (risk increases significantly after 65)",
+      "**Hypertension** (most common modifiable risk factor)",
+      "**Heart Failure (HF)**",
+      "**Valvular heart disease**",
+      "Coronary artery disease (CAD)",
+      "Obesity",
+      "Diabetes Mellitus (DM)",
+      "Obstructive Sleep Apnea (OSA)",
+      "Chronic kidney disease",
+      "Excessive alcohol consumption"
+    ],
+    "treatmentContraindications": [
+      "**Anticoagulation:** High bleeding risk (e.g., active bleeding, severe thrombocytopenia).",
+      "**Beta-Blockers (nonselective):** Contraindicated in asthma/severe COPD.",
+      "**Non-Dihydropyridine CCBs (Verapamil, Diltiazem):** Contraindicated in HFrEF (heart failure with reduced ejection fraction).",
+      "**Antiarrhythmics (e.g., Amiodarone):** Amiodarone has numerous contraindications, including severe bradycardia/heart block and iodine hypersensitivity. Sotalol is contraindicated in severe renal impairment and long QT syndrome."
+    ],
+    "standardTreatment": [
+      {
+        "class": "1. Anticoagulation (Stroke Prevention)",
+        "drugs": "Warfarin, Apixaban, Rivaroxaban, Dabigatran",
+        "dosage": "**Based on CHA₂DS₂-VASc score.** Score ≥2 in men or ≥3 in women requires anticoagulation. DOACs (e.g., Apixaban 5 mg twice daily) are preferred over warfarin."
+      },
+      {
+        "class": "2. Rate Control Strategy (Controls heart rate)",
+        "drugs": "Beta-Blockers (e.g., Metoprolol, Carvedilol) OR Non-Dihydropyridine CCBs (e.g., Diltiazem, Verapamil). Digoxin may be added.",
+        "dosage": "Goal is resting HR < 80 bpm (strict) or < 110 bpm (lenient)."
+      },
+      {
+        "class": "3. Rhythm Control Strategy (Restores/maintains normal rhythm)",
+        "drugs": "Antiarrhythmics (e.g., Amiodarone, Sotalol, Flecainide) OR procedural (e.g., electrical cardioversion, ablation).",
+        "dosage": "Used for patients who remain symptomatic despite adequate rate control."
+      }
+    ],
+    "lifestyleModifications": [
+      "Weight loss (if overweight/obese)",
+      "Limit or abstain from alcohol",
+      "Strict management of hypertension, diabetes, and hyperlipidemia",
+      "Smoking cessation",
+      "Increase moderate physical activity",
+      "Screen for and treat Obstructive Sleep Apnea (OSA)"
+    ],
+    "searchKeywords": [
+      "afib",
+      "atrial fibrillation",
+      "chads2-vasc",
+      "anticoagulation",
+      "rate control",
+      "rhythm control"
+    ]
+  },"heart_failure": {
+    "name": "Heart Failure (HFrEF & HFpEF)",
+    "definition": "A chronic, progressive condition in which the heart muscle is unable to pump enough blood to meet the body's needs for blood and oxygen.",
+    "overview": "Heart failure describes the inability of the heart to keep up with its workload. It is generally classified by the Left Ventricular Ejection Fraction (LVEF). Management focuses on the 'Four Pillars' of Guideline-Directed Medical Therapy (GDMT) for reduced ejection fraction to improve survival and reduce hospitalizations.",
+    "etiology": {
+      "summary": "Caused by structural or functional impairment of ventricular filling or ejection of blood.",
+      "primary": "Coronary Artery Disease (CAD) and Myocardial Infarction (MI) are the most common causes. Hypertension is a major contributor to Heart Failure with Preserved Ejection Fraction (HFpEF).",
+      "secondary": "Valvular heart disease, arrhythmias (like AFib), cardiomyopathies (viral, alcohol, drug-induced), and metabolic disorders (thyroid, diabetes)."
+    },
+    "types": [
+      {
+        "name": "HFrEF (Reduced Ejection Fraction)",
+        "details": "LVEF ≤ 40%. Also called 'systolic failure'. The heart muscle is weak and cannot squeeze efficiently."
+      },
+      {
+        "name": "HFpEF (Preserved Ejection Fraction)",
+        "details": "LVEF ≥ 50%. Also called 'diastolic failure'. The heart muscle is stiff and cannot fill properly."
+      },
+      {
+        "name": "HFmrEF (Mildly Reduced Ejection Fraction)",
+        "details": "LVEF 41-49%. Treatment generally follows HFrEF guidelines."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Dyspnea (shortness of breath) on exertion or when lying flat (Orthopnea)",
+      "Paroxysmal Nocturnal Dyspnea (waking up gasping for air)",
+      "Edema (swelling) in legs, ankles, and feet",
+      "Chronic fatigue and weakness",
+      "Rapid or irregular heartbeat",
+      "Persistent cough or wheezing with white/pink blood-tinged phlegm",
+      "Abdominal swelling (ascites) and nausea"
+    ],
+    "pathophysiologySteps": [
+      "An index event (e.g., MI, HTN) damages the heart muscle or increases wall stress.",
+      "The body activates compensatory mechanisms: The Sympathetic Nervous System (SNS) increases HR and contractility; the RAAS system causes vasoconstriction and fluid retention.",
+      "Over time, these compensatory mechanisms become maladaptive.",
+      "Chronic neurohormonal activation leads to ventricular remodeling (dilation, hypertrophy, fibrosis) and apoptosis of cardiac cells.",
+      "Cardiac output falls, congestion increases, and organ perfusion decreases."
+    ],
+    "riskFactors": [
+      "Coronary Artery Disease (CAD) / Heart Attack",
+      "Hypertension (High Blood Pressure)",
+      "Diabetes Mellitus",
+      "Obesity",
+      "Valvular Heart Disease",
+      "Alcohol and tobacco use",
+      "Sleep Apnea"
+    ],
+    "treatmentContraindications": [
+      "**Non-Dihydropyridine CCBs (Verapamil, Diltiazem):** Contraindicated in HFrEF as they are negative inotropes and can worsen failure.",
+      "**NSAIDs:** Cause sodium retention and vasoconstriction, worsening fluid overload and renal function.",
+      "**Thiazolidinediones (Pioglitazone):** Cause fluid retention and can exacerbate HF.",
+      "**Antiarrhythmics (Class I):** Most (like Flecainide) are pro-arrhythmic in HF patients (Amiodarone/Dofetilide are exceptions)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "1. ARNI / ACE / ARB (Pillar 1)",
+        "drugs": "Sacubitril/Valsartan (Preferred), Lisinopril, Losartan",
+        "dosage": "e.g., Entresto 24/26 mg BID titrating to 97/103 mg BID"
+      },
+      {
+        "class": "2. Beta-Blockers (Evidence-based) (Pillar 2)",
+        "drugs": "Carvedilol, Metoprolol Succinate, Bisoprolol",
+        "dosage": "e.g., Carvedilol 3.125 mg BID titrating to 25 mg BID"
+      },
+      {
+        "class": "3. MRA (Mineralocorticoid Receptor Antagonist) (Pillar 3)",
+        "drugs": "Spironolactone, Eplerenone",
+        "dosage": "e.g., Spironolactone 12.5-25 mg daily"
+      },
+      {
+        "class": "4. SGLT2 Inhibitors (Pillar 4)",
+        "drugs": "Dapagliflozin, Empagliflozin",
+        "dosage": "e.g., Dapagliflozin 10 mg daily (regardless of diabetes status)"
+      },
+      {
+        "class": "Symptom Management",
+        "drugs": "Loop Diuretics (Furosemide, Bumetanide)",
+        "dosage": "Titrated to relieve congestion/edema"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Sodium Restriction:** Limit sodium to < 2,000 mg/day to prevent fluid retention.",
+      "**Fluid Restriction:** Often limited to 1.5 - 2 L/day in severe cases or hyponatremia.",
+      "**Daily Weights:** Weigh daily; report weight gain of >2-3 lbs overnight or >5 lbs in a week.",
+      "**Smoking Cessation & Alcohol Limitation.**",
+      "**Cardiac Rehabilitation:** Structured exercise program."
+    ],
+    "searchKeywords": [
+      "heart failure",
+      "hfref",
+      "hfpef",
+      "congestive heart failure",
+      "chf",
+      "gdmt"
+    ]
+  },
+  "hyperlipidemia": {
+    "name": "Hyperlipidemia (High Cholesterol)",
+    "definition": "Elevated levels of lipids (fats), such as cholesterol and triglycerides, in the blood.",
+    "overview": "Hyperlipidemia is a major risk factor for atherosclerotic cardiovascular disease (ASCVD), which leads to heart attack, stroke, and peripheral artery disease. The primary target of therapy is usually Low-Density Lipoprotein (LDL-C), often called 'bad cholesterol'. Treatment intensity is based on the patient's overall cardiovascular risk profile.",
+    "etiology": {
+      "summary": "Caused by a mix of genetic and lifestyle factors.",
+      "primary": "Familial Hypercholesterolemia (FH) is a genetic disorder causing very high LDL from birth. Other genetic factors influence metabolism.",
+      "secondary": "Poor diet (high saturated/trans fats), physical inactivity, obesity, type 2 diabetes, hypothyroidism, chronic kidney disease, and alcohol use."
+    },
+    "types": [
+      {
+        "name": "Hypercholesterolemia",
+        "details": "Elevated total cholesterol and LDL-C."
+      },
+      {
+        "name": "Hypertriglyceridemia",
+        "details": "Elevated triglycerides (>150 mg/dL). Severe levels (>500) increase pancreatitis risk."
+      },
+      {
+        "name": "Mixed Dyslipidemia",
+        "details": "Elevations in both cholesterol and triglycerides, often with low HDL."
+      }
+    ],
+    "signsAndSymptoms": [
+      "**Asymptomatic:** Most patients have no symptoms until a cardiovascular event (heart attack/stroke) occurs.",
+      "Xanthomas (fatty deposits under the skin)",
+      "Xanthelasma (yellow patches on eyelids)",
+      "Corneal Arcus (white/gray ring around the iris)"
+    ],
+    "pathophysiologySteps": [
+      "Excess LDL cholesterol particles penetrate the endothelial lining of arteries.",
+      "LDL becomes oxidized and is engulfed by macrophages, forming 'foam cells'.",
+      "Foam cells accumulate to form fatty streaks, the precursor to atherosclerotic plaques.",
+      "Fibrous caps form over the plaque. If a plaque ruptures, it triggers clot formation (thrombosis), blocking blood flow to the heart or brain."
+    ],
+    "riskFactors": [
+      "Diet high in saturated/trans fats",
+      "Obesity (BMI > 30)",
+      "Lack of exercise",
+      "Smoking (lowers HDL and damages vessels)",
+      "Diabetes",
+      "Age and Gender (Men > 45, Women > 55)",
+      "Family history of premature heart disease"
+    ],
+    "treatmentContraindications": [
+      "**Statins:** Contraindicated in active liver disease, pregnancy, and breastfeeding (Category X).",
+      "**Fibrates (Gemfibrozil):** Contraindicated with statins (severe myopathy risk) and in severe renal/hepatic disease.",
+      "**Bile Acid Sequestrants:** Contraindicated if triglycerides > 300-400 mg/dL (can worsen TG)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "High-Intensity Statins (First-line)",
+        "drugs": "Atorvastatin, Rosuvastatin",
+        "dosage": "Atorvastatin 40-80 mg OR Rosuvastatin 20-40 mg (Lowers LDL ≥50%)"
+      },
+      {
+        "class": "Moderate-Intensity Statins",
+        "drugs": "Simvastatin, Pravastatin, Lower dose Atorvastatin",
+        "dosage": "e.g., Simvastatin 20-40 mg (Lowers LDL 30-49%)"
+      },
+      {
+        "class": "Cholesterol Absorption Inhibitor",
+        "drugs": "Ezetimibe",
+        "dosage": "10 mg daily (Add-on to statin)"
+      },
+      {
+        "class": "PCSK9 Inhibitors (Injectable)",
+        "drugs": "Evolocumab, Alirocumab",
+        "dosage": "SC injection every 2-4 weeks (For very high risk/FH)"
+      },
+      {
+        "class": "Fibrates (For Triglycerides)",
+        "drugs": "Fenofibrate",
+        "dosage": "Used if TG > 500 to prevent pancreatitis"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Diet:** Reduce saturated fats (red meat, full-fat dairy) and eliminate trans fats. Increase soluble fiber (oats, fruits, beans).",
+      "**Exercise:** Moderate aerobic activity for 150 mins/week.",
+      "**Weight Loss:** Losing 5-10% of body weight can significantly lower lipids.",
+      "**Quit Smoking:** Improves HDL levels and reduces CV risk."
+    ],
+    "searchKeywords": [
+      "hyperlipidemia",
+      "cholesterol",
+      "ldl",
+      "statin",
+      "triglycerides"
+    ]
+  },
+  "migraine": {
+    "name": "Migraine",
+    "definition": "A complex neurological condition characterized by recurrent attacks of moderate to severe headache, often unilateral and pulsating, accompanied by nausea and sensitivity to light/sound.",
+    "overview": "Migraine is more than just a headache; it is a disabling sensory processing disorder. It affects over 1 billion people worldwide. Attacks can last 4 to 72 hours. Management involves both acute (abortive) treatment to stop an attack and preventive treatment to reduce frequency.",
+    "etiology": {
+      "summary": "The precise cause is not fully understood but involves genetics and environmental triggers.",
+      "primary": "Current theory involves the activation of the trigeminovascular system and the release of neuropeptides like Calcitonin Gene-Related Peptide (CGRP), causing neurogenic inflammation and pain signal transmission.",
+      "secondary": "Triggers vary by patient: Hormonal changes (menstruation), stress, sleep changes, weather changes, certain foods (aged cheese, wine), and caffeine."
+    },
+    "types": [
+      {
+        "name": "Migraine without Aura",
+        "details": "The most common type (70-80%). Headache attack without specific warning signs."
+      },
+      {
+        "name": "Migraine with Aura",
+        "details": "Headache preceded by transient neurological symptoms (visual flashes, blind spots, tingling) lasting 5-60 minutes."
+      },
+      {
+        "name": "Chronic Migraine",
+        "details": "Headache occurring on 15 or more days per month for >3 months, with at least 8 days having migraine features."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Pulsating or throbbing pain",
+      "Unilateral pain (one side of head)",
+      "Photophobia (sensitivity to light)",
+      "Phonophobia (sensitivity to sound)",
+      "Nausea and vomiting",
+      "Worsened by physical activity",
+      "Aura: Visual disturbances (zigzag lines), sensory changes, or speech difficulty"
+    ],
+    "pathophysiologySteps": [
+      "Trigger activates the hypothalamus and brainstem.",
+      "Cortical Spreading Depression (CSD) occurs (responsible for aura).",
+      "Activation of the Trigeminal Nerve system.",
+      "Release of vasoactive neuropeptides (CGRP, Substance P) at meningeal blood vessels.",
+      "This causes vasodilation, plasma protein extravasation, and mast cell degranulation (Neurogenic Inflammation).",
+      "Sensitization of pain pathways leads to the headache phase."
+    ],
+    "riskFactors": [
+      "Female sex (3x more common)",
+      "Family history (high genetic component)",
+      "High stress levels",
+      "Tobacco use"
+    ],
+    "treatmentContraindications": [
+      "**Triptans & Ergotamines:** Contraindicated in patients with Ischemic Heart Disease (CAD, MI), Cerebrovascular Disease (Stroke/TIA), Uncontrolled Hypertension, or Peripheral Vascular Disease due to vasoconstrictive effects.",
+      "**CGRP Inhibitors:** Generally safe, but long-term safety in pregnancy is not established.",
+      "**Topiramate (Preventive):** Contraindicated in pregnancy (cleft lip/palate risk)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Acute (Abortive) - Mild/Mod",
+        "drugs": "NSAIDs (Naproxen, Ibuprofen), Acetaminophen/Aspirin/Caffeine (Excedrin)",
+        "dosage": "Take at onset."
+      },
+      {
+        "class": "Acute (Abortive) - Mod/Severe",
+        "drugs": "Triptans (Sumatriptan, Rizatriptan)",
+        "dosage": "e.g., Sumatriptan 50-100 mg PO at onset"
+      },
+      {
+        "class": "Acute (Abortive) - New Agents",
+        "drugs": "Gepants (Ubrogepant, Rimegepant)",
+        "dosage": "For patients who cannot take Triptans"
+      },
+      {
+        "class": "Preventive - Oral",
+        "drugs": "Beta-blockers (Propranolol), Antiepileptics (Topiramate), TCAs (Amitriptyline)",
+        "dosage": "Daily dosing to reduce frequency"
+      },
+      {
+        "class": "Preventive - Injectable",
+        "drugs": "CGRP Monoclonal Antibodies (Erenumab, Galcanezumab)",
+        "dosage": "Monthly SC injection"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Sleep Hygiene:** Maintain regular sleep/wake times.",
+      "**Diet:** Identify and avoid food triggers. Do not skip meals.",
+      "**Hydration:** Drink plenty of water.",
+      "**Stress Management:** Biofeedback, CBT, relaxation techniques.",
+      "**Headache Diary:** Track frequency and triggers to optimize treatment."
+    ],
+    "searchKeywords": [
+      "migraine",
+      "headache",
+      "aura",
+      "triptan",
+      "cgrp"
+    ]
+  },
+  "uti": {
+    "name": "Urinary Tract Infection (Acute Cystitis)",
+    "definition": "An infection in any part of the urinary system, most commonly involving the lower urinary tract (bladder and urethra).",
+    "overview": "Acute uncomplicated cystitis is one of the most common bacterial infections, predominantly affecting women. It occurs when bacteria enter the urethra and multiply in the bladder. If left untreated, it can ascend to the kidneys, causing pyelonephritis (a more serious infection).",
+    "etiology": {
+      "summary": "Bacterial invasion of the urinary tract.",
+      "primary": "**Escherichia coli (E. coli)** causes 75-95% of uncomplicated cystitis cases.",
+      "secondary": "Other pathogens include *Klebsiella pneumoniae*, *Proteus mirabilis*, and *Staphylococcus saprophyticus*."
+    },
+    "types": [
+      {
+        "name": "Cystitis (Lower UTI)",
+        "details": "Infection of the bladder. Symptoms include dysuria, frequency, urgency."
+      },
+      {
+        "name": "Pyelonephritis (Upper UTI)",
+        "details": "Infection of the kidneys. Systemic symptoms: fever, chills, flank pain, nausea/vomiting. Requires more aggressive treatment."
+      },
+      {
+        "name": "Complicated UTI",
+        "details": "Associated with structural abnormalities, catheters, pregnancy, or immunosuppression."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Dysuria (burning sensation during urination)",
+      "Urinary frequency (urinating often in small amounts)",
+      "Urgency (strong, persistent urge to urinate)",
+      "Suprapubic pain or pelvic pressure",
+      "Cloudy or strong-smelling urine",
+      "Hematuria (blood in urine)",
+      "**Elderly:** Confusion or altered mental status may be the only sign."
+    ],
+    "pathophysiologySteps": [
+      "Fecal bacteria (e.g., E. coli) colonize the periurethral area.",
+      "Bacteria ascend the urethra to the bladder.",
+      "Bacteria attach to the bladder wall (urothelium) using pili/fimbriae to resist being washed out by urine flow.",
+      "Bacteria multiply and trigger an inflammatory response (cytokines), leading to symptoms.",
+      "In severe cases, bacteria ascend the ureters to the kidneys."
+    ],
+    "riskFactors": [
+      "Female anatomy (shorter urethra)",
+      "Sexual activity",
+      "Use of spermicides or diaphragms",
+      "Menopause (loss of protective estrogen)",
+      "Urinary tract abnormalities or stones",
+      "Catheter use",
+      "Diabetes"
+    ],
+    "treatmentContraindications": [
+      "**Nitrofurantoin:** Contraindicated if Creatinine Clearance (CrCl) < 60 mL/min (some guidelines say <30) due to poor urine concentration and toxicity. Do not use for Pyelonephritis.",
+      "**Fluoroquinolones (Ciprofloxacin):** Avoid for uncomplicated cystitis if alternatives exist due to serious side effect risks (tendon rupture, neuropathy).",
+      "**Trimethoprim/Sulfamethoxazole:** Contraindicated in sulfa allergy and 3rd trimester of pregnancy."
+    ],
+    "standardTreatment": [
+      {
+        "class": "First-Line (Uncomplicated)",
+        "drugs": "Nitrofurantoin (Macrobid)",
+        "dosage": "100 mg PO BID for 5 days"
+      },
+      {
+        "class": "First-Line (Uncomplicated)",
+        "drugs": "Trimethoprim-Sulfamethoxazole (Bactrim DS)",
+        "dosage": "160/800 mg PO BID for 3 days (if local resistance <20%)"
+      },
+      {
+        "class": "First-Line (Uncomplicated)",
+        "drugs": "Fosfomycin",
+        "dosage": "3 g PO single dose (Lower efficacy than others)"
+      },
+      {
+        "class": "Second-Line",
+        "drugs": "Beta-Lactams (Cephalexin, Cefpodoxime)",
+        "dosage": "e.g., Cephalexin 500 mg QID for 5-7 days"
+      },
+      {
+        "class": "Analgesic (Symptomatic)",
+        "drugs": "Phenazopyridine (Azo)",
+        "dosage": "For dysuria relief (max 2 days). Turns urine orange."
+      }
+    ],
+    "lifestyleModifications": [
+      "**Hydration:** Drink plenty of water to dilute urine and flush out bacteria.",
+      "**Hygiene:** Wipe from front to back.",
+      "**Post-coital voiding:** Urinate soon after intercourse.",
+      "**Avoid Irritants:** Minimize potential irritants like feminine deodorant sprays or douches.",
+      "**Cranberry:** Juice/supplements may prevent adherence of bacteria (prophylactic use, controversial efficacy)."
+    ],
+    "searchKeywords": [
+      "uti",
+      "cystitis",
+      "bladder infection",
+      "dysuria",
+      "e coli"
+    ]
+  },
+  "osteoarthritis": {
+    "name": "Osteoarthritis (OA)",
+    "definition": "A degenerative joint disease characterized by the breakdown of cartilage and underlying bone.",
+    "overview": "Osteoarthritis is the most common form of arthritis, affecting millions worldwide. It is often called 'wear and tear' arthritis. It occurs when the protective cartilage that cushions the ends of the bones wears down over time. It most commonly affects joints in the hands, knees, hips, and spine.",
+    "etiology": {
+      "summary": "Mechanical stress combined with biochemical processes leads to joint degradation.",
+      "primary": "Aging and genetic predisposition.",
+      "secondary": "Obesity (excess load), joint injury/trauma, repetitive stress (occupation), or anatomic bone deformities."
+    },
+    "types": [
+      {
+        "name": "Primary OA",
+        "details": "Idiopathic; related to aging and genetics. No specific inciting cause."
+      },
+      {
+        "name": "Secondary OA",
+        "details": "Caused by a known precipitating factor such as trauma, obesity, or surgery."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Pain in affected joints during or after movement",
+      "Stiffness (most noticeable upon awakening or after inactivity; usually lasts <30 mins)",
+      "Tenderness when applying light pressure",
+      "Loss of flexibility / Range of motion",
+      "Grating sensation (Crepitus) when using the joint",
+      "Bone spurs (hard lumps around the joint)",
+      "Swelling"
+    ],
+    "pathophysiologySteps": [
+      "Mechanical load or injury damages articular cartilage.",
+      "Chondrocytes release inflammatory cytokines and enzymes (metalloproteinases) that degrade the cartilage matrix.",
+      "Cartilage loses elasticity and thins/erodes, exposing underlying bone.",
+      "Subchondral bone thickens (sclerosis) and forms cysts and osteophytes (bone spurs).",
+      "Synovial inflammation (synovitis) occurs, contributing to pain."
+    ],
+    "riskFactors": [
+      "Older age",
+      "Obesity (Major modifiable risk, especially for knees)",
+      "Female sex",
+      "Joint injuries",
+      "Repeated stress on the joint (occupation/sports)",
+      "Genetics",
+      "Bone deformities"
+    ],
+    "treatmentContraindications": [
+      "**NSAIDs (Oral):** Caution/Contraindicated in CKD, peptic ulcer disease, uncontrolled hypertension, and heart failure.",
+      "**Duloxetine:** Avoid in severe hepatic impairment or heavy alcohol use.",
+      "**Opioids:** Generally not recommended due to addiction risk and limited long-term efficacy."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Topical NSAIDs (First-line for Knee/Hand)",
+        "drugs": "Diclofenac Gel (Voltaren)",
+        "dosage": "Apply QID to affected joint (Lower systemic risk)"
+      },
+      {
+        "class": "Oral NSAIDs",
+        "drugs": "Naproxen, Ibuprofen, Celecoxib",
+        "dosage": "Use lowest effective dose for shortest duration"
+      },
+      {
+        "class": "Analgesic",
+        "drugs": "Acetaminophen (Tylenol)",
+        "dosage": "Max 3-4g/day (Weaker efficacy than NSAIDs)"
+      },
+      {
+        "class": "Intra-articular Injections",
+        "drugs": "Triamcinolone (Steroid)",
+        "dosage": "Injection every 3-4 months for acute flares"
+      },
+      {
+        "class": "SNRI (Adjunct)",
+        "drugs": "Duloxetine",
+        "dosage": "30-60 mg daily (for chronic musculoskeletal pain)"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Weight Loss:** Essential for knee/hip OA. Reduces load on joints.",
+      "**Exercise:** Low-impact activities (swimming, cycling, walking) to strengthen muscles supporting the joint.",
+      "**Physical Therapy:** To improve range of motion and muscle strength.",
+      "**Assistive Devices:** Canes, braces, or shoe inserts.",
+      "**Heat/Cold Therapy:** For symptom relief."
+    ],
+    "searchKeywords": [
+      "osteoarthritis",
+      "oa",
+      "joint pain",
+      "arthritis",
+      "wear and tear"
+    ]
+  },
+  "hypothyroidism": {
+    "name": "Hypothyroidism",
+    "definition": "A condition in which the thyroid gland does not produce enough thyroid hormone.",
+    "overview": "The thyroid gland controls metabolism. In hypothyroidism, metabolism slows down. It is a common endocrine disorder, more prevalent in women. The most common cause in iodine-sufficient areas is Hashimoto's thyroiditis, an autoimmune disease.",
+    "etiology": {
+      "summary": "Failure of the thyroid gland to produce T3/T4.",
+      "primary": "Hashimoto's thyroiditis (Autoimmune), Iatrogenic (Radioactive iodine, surgery), Iodine deficiency (global), Drugs (Amiodarone, Lithium).",
+      "secondary": "Pituitary tumor or damage (Central hypothyroidism) - TSH is low/normal despite low T4."
+    },
+    "types": [
+      {
+        "name": "Overt Hypothyroidism",
+        "details": "High TSH and Low Free T4. Symptoms present."
+      },
+      {
+        "name": "Subclinical Hypothyroidism",
+        "details": "High TSH but Normal Free T4. Often asymptomatic."
+      },
+      {
+        "name": "Myxedema Coma",
+        "details": "Severe, life-threatening decompensated hypothyroidism with altered mental status and hypothermia."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Fatigue and lethargy",
+      "Weight gain",
+      "Cold intolerance",
+      "Constipation",
+      "Dry skin and hair loss",
+      "Depression / Brain fog",
+      "Bradycardia (slow heart rate)",
+      "Goiter (enlarged thyroid)",
+      "Menstrual irregularities"
+    ],
+    "pathophysiologySteps": [
+      "Autoimmune attack (antibodies against TPO or Thyroglobulin) leads to lymphocytic infiltration and fibrosis of the thyroid (Hashimoto's).",
+      "Thyroid follicles are destroyed, reducing synthesis of T4 and T3.",
+      "The pituitary gland senses low T4 and secretes excess TSH (Thyroid Stimulating Hormone) to compensate.",
+      "Elevated TSH may cause goiter.",
+      "Lack of thyroid hormone slows metabolic processes in all organ systems (decreased BMR, accumulation of glycosaminoglycans causing myxedema)."
+    ],
+    "riskFactors": [
+      "Female sex",
+      "Age > 60",
+      "Family history of thyroid disease",
+      "History of other autoimmune diseases (Type 1 Diabetes, Celiac)",
+      "Previous thyroid surgery or radiation",
+      "Pregnancy (postpartum thyroiditis)"
+    ],
+    "treatmentContraindications": [
+      "**Levothyroxine:** Contraindicated in uncorrected adrenal insufficiency (can precipitate adrenal crisis) and acute myocardial infarction (caution due to increased metabolic demand)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Thyroid Hormone Replacement",
+        "drugs": "Levothyroxine (T4)",
+        "dosage": "1.6 mcg/kg/day PO. Taken on empty stomach 30-60 mins before breakfast. Titrate based on TSH."
+      },
+      {
+        "class": "Alternative (Not first-line)",
+        "drugs": "Liothyronine (T3) or Dessicated Thyroid",
+        "dosage": "Use is controversial; guidelines recommend T4 monotherapy."
+      }
+    ],
+    "lifestyleModifications": [
+      "**Administration:** Crucial to take medication consistently on an empty stomach, away from other meds (calcium, iron, PPIs interfere with absorption).",
+      "**Iodine:** Ensure adequate iodine intake (iodized salt), but avoid excess if autoimmune.",
+      "**Diet:** No specific diet cures it, but a balanced diet supports metabolism."
+    ],
+    "searchKeywords": [
+      "hypothyroidism",
+      "thyroid",
+      "hashimotos",
+      "levothyroxine",
+      "tsh"
+    ]
+  },"t1dm": {
+    "name": "Type 1 Diabetes Mellitus (T1DM)",
+    "definition": "A chronic autoimmune condition where the pancreas produces little or no insulin, requiring lifelong insulin replacement for survival.",
+    "overview": "Type 1 Diabetes occurs when the body's immune system mistakenly attacks and destroys the insulin-producing beta cells in the pancreas. Unlike Type 2 diabetes, it is not linked to diet or lifestyle factors at onset. Without insulin, sugar cannot enter cells to be used for energy, leading to life-threatening hyperglycemia and ketoacidosis.",
+    "etiology": {
+      "summary": "Primarily caused by an autoimmune destruction of pancreatic beta cells in genetically susceptible individuals.",
+      "primary": "Autoimmune reaction (Type 1A) triggered by environmental factors (possibly viruses like enterovirus, cold weather, or early diet) in people with HLA-DR3 or HLA-DR4 genetic markers.",
+      "secondary": "Idiopathic (Type 1B) forms exist with no evidence of autoimmunity (more common in African/Asian ancestry). Rarely caused by pancreatic damage (pancreatitis, surgery) or checkpoint inhibitor cancer therapy."
+    },
+    "types": [
+      {
+        "name": "Type 1A (Autoimmune)",
+        "details": "The most common form (90-95%), characterized by the presence of autoantibodies (e.g., GAD65, IA-2) attacking beta cells."
+      },
+      {
+        "name": "Type 1B (Idiopathic)",
+        "details": "A rare form with no evidence of autoimmunity (no antibodies) but permanent insulin deficiency. Prone to ketoacidosis."
+      },
+      {
+        "name": "LADA (Latent Autoimmune Diabetes in Adults)",
+        "details": "Sometimes called 'Type 1.5'. A slow-progressing form of autoimmune diabetes diagnosed in adulthood, often misdiagnosed initially as Type 2."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Polyuria (Frequent urination)",
+      "Polydipsia (Excessive thirst)",
+      "Polyphagia (Extreme hunger)",
+      "Unexplained weight loss",
+      "Fatigue and weakness",
+      "Blurred vision",
+      "Fruity-smelling breath (sign of ketones)",
+      "Slow-healing sores"
+    ],
+    "pathophysiologySteps": [
+      "Genetic predisposition + Environmental trigger initiates immune response.",
+      "T-lymphocytes infiltrate the islets of Langerhans in the pancreas (Insulitis).",
+      "Autoimmune destruction of beta cells occurs gradually over months/years.",
+      "Clinical symptoms appear when >80-90% of beta cells are destroyed.",
+      "Absolute insulin deficiency leads to hyperglycemia and unsuppressed hepatic glucose production.",
+      "Lipolysis (fat breakdown) increases, producing ketones -> Diabetic Ketoacidosis (DKA)."
+    ],
+    "riskFactors": [
+      "Family history (parent or sibling with T1DM)",
+      "Genetics (HLA-DR3, HLA-DR4 regions)",
+      "Age (Peaks in children 4-7 and 10-14 years old)",
+      "Geography (Risk increases further away from equator)",
+      "Viral exposure (Enterovirus, Epstein-Barr, Mumps)"
+    ],
+    "treatmentContraindications": [
+      "**Sulfonylureas/Meglitinides:** Contraindicated as they require functioning beta cells to work.",
+      "**Metformin:** Not FDA approved for T1DM (though sometimes used off-label); risk of acidosis in unstable patients.",
+      "**SGLT2 Inhibitors:** Generally avoided or used with extreme caution due to increased risk of Euglycemic DKA."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Basal Insulin (Long-acting)",
+        "drugs": "Insulin Glargine, Degludec, Detemir",
+        "dosage": "Once or twice daily to control fasting glucose"
+      },
+      {
+        "class": "Bolus Insulin (Rapid-acting)",
+        "drugs": "Insulin Lispro, Aspart, Glulisine",
+        "dosage": "Taken before meals (based on carb count) and for corrections"
+      },
+      {
+        "class": "Insulin Pump Therapy",
+        "drugs": "Continuous Subcutaneous Insulin Infusion (CSII)",
+        "dosage": "Programmed basal rates + bolus doses"
+      },
+      {
+        "class": "Amylin Analog",
+        "drugs": "Pramlintide",
+        "dosage": "Injectable adjunct to smooth post-meal spikes"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Carbohydrate Counting:** Learn to match insulin doses precisely to grams of carbohydrates eaten.",
+      "**Glucose Monitoring:** Check blood sugar 4-10 times daily or use a Continuous Glucose Monitor (CGM).",
+      "**Sick Day Rules:** Test for ketones and increase hydration/insulin during illness to prevent DKA.",
+      "**Rule of 15:** Treat hypoglycemia (sugar < 70) with 15g fast carbs, wait 15 mins, recheck.",
+      "**Exercise Adjustment:** Lower insulin or eat a snack before exercise to prevent lows.",
+      "**Medical ID:** Always wear a bracelet/necklace identifying you as having Type 1 Diabetes.",
+      "**Foot Care:** Inspect feet daily for cuts/blisters; never walk barefoot.",
+      "**Injection Site Rotation:** Rotate sites to prevent lipohypertrophy (lumpy skin affecting absorption).",
+      "**Annual Screening:** Yearly eye exams (retinopathy) and urine tests (microalbuminuria).",
+      "**Dental Hygiene:** High glucose in saliva increases gum disease risk; floss daily.",
+      "**Smoking Cessation:** Critical to prevent accelerated vascular complications.",
+      "**Ketone Testing:** Keep strips at home; test if glucose > 240 mg/dL persistently."
+    ],
+    "searchKeywords": [
+      "type 1 diabetes",
+      "t1dm",
+      "juvenile diabetes",
+      "insulin dependent",
+      "dka",
+      "lada"
+    ]
+  },
+  "ckd": {
+    "name": "Chronic Kidney Disease (CKD)",
+    "definition": "A progressive loss of kidney function over a period of months or years, characterized by a Glomerular Filtration Rate (GFR) < 60 or markers of kidney damage for > 3 months.",
+    "overview": "CKD involves the gradual destruction of nephrons, leading to the inability to filter waste, regulate electrolytes, and balance fluids. It is a 'silent' disease in early stages. Management focuses on slowing progression to End-Stage Renal Disease (ESRD) and managing complications like anemia, bone disease, and cardiovascular risk.",
+    "etiology": {
+      "summary": "Most commonly caused by chronic insults to the renal vasculature or glomeruli.",
+      "primary": "**Diabetes Mellitus** (Diabetic Nephropathy) and **Hypertension** are the two leading causes.",
+      "secondary": "Glomerulonephritis, Polycystic Kidney Disease (PKD), chronic use of NSAIDs/nephrotoxins, recurrent pyelonephritis, and obstructive uropathy (stones/BPH)."
+    },
+    "types": [
+      {
+        "name": "Stage 1",
+        "details": "Kidney damage with normal GFR (≥ 90). Proteinuria usually present."
+      },
+      {
+        "name": "Stage 2",
+        "details": "Kidney damage with mild GFR decrease (60-89)."
+      },
+      {
+        "name": "Stage 3a",
+        "details": "Mild-to-moderate GFR decrease (45-59)."
+      },
+      {
+        "name": "Stage 3b",
+        "details": "Moderate-to-severe GFR decrease (30-44). Symptoms often begin here."
+      },
+      {
+        "name": "Stage 4",
+        "details": "Severe GFR decrease (15-29). Preparation for dialysis/transplant."
+      },
+      {
+        "name": "Stage 5 (ESRD)",
+        "details": "Kidney Failure (GFR < 15). Dialysis or transplant required for survival."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Fatigue and weakness (Anemia)",
+      "Edema (swelling) in feet/ankles",
+      "Uncontrolled hypertension",
+      "Foamy urine (Proteinuria)",
+      "Pruritus (Persistent itching due to high phosphorus)",
+      "Muscle cramps",
+      "Nausea/Vomiting/Loss of appetite (Uremia)",
+      "Metallic taste in mouth"
+    ],
+    "pathophysiologySteps": [
+      "Initial injury leads to nephron loss.",
+      "Remaining nephrons hypertrophy and hyperfilter to compensate.",
+      "Hyperfiltration causes glomerular hypertension and sclerosis (scarring).",
+      "Proteinuria develops, which is directly toxic to renal tubules.",
+      "Progressive fibrosis leads to decline in GFR, accumulation of uremic toxins, and loss of hormonal functions (EPO, Vitamin D activation)."
+    ],
+    "riskFactors": [
+      "Diabetes (Types 1 and 2)",
+      "High Blood Pressure",
+      "Heart Disease",
+      "Obesity",
+      "Family history of kidney disease",
+      "Age > 60",
+      "Smoking"
+    ],
+    "treatmentContraindications": [
+      "**NSAIDs:** Strictly contraindicated; constrict afferent arteriole and worsen failure.",
+      "**Gadolinium Contrast:** Avoid in GFR < 30 due to risk of Nephrogenic Systemic Fibrosis (NSF).",
+      "**Bisphosphonates:** Contraindicated in GFR < 30-35.",
+      "**Potassium-Sparing Diuretics:** Use with extreme caution if GFR < 30 (Hyperkalemia risk)."
+    ],
+    "standardTreatment": [
+      {
+        "class": "ACE Inhibitors / ARBs",
+        "drugs": "Lisinopril, Losartan, Irbesartan",
+        "dosage": "First-line for proteinuric CKD. Monitor K+."
+      },
+      {
+        "class": "SGLT2 Inhibitors",
+        "drugs": "Dapagliflozin, Empagliflozin",
+        "dosage": "Slows progression regardless of diabetes status."
+      },
+      {
+        "class": "MRA (Non-steroidal)",
+        "drugs": "Finerenone",
+        "dosage": "For CKD in Type 2 Diabetes."
+      },
+      {
+        "class": "Phosphate Binders",
+        "drugs": "Sevelamer, Calcium Acetate",
+        "dosage": "With meals to bind dietary phosphorus."
+      },
+      {
+        "class": "ESA (Erythropoiesis Stimulating Agent)",
+        "drugs": "Epoetin Alfa, Darbepoetin",
+        "dosage": "For anemia if Hgb < 10 g/dL."
+      }
+    ],
+    "lifestyleModifications": [
+      "**Sodium Restriction:** Limit to < 2,000 mg/day to control BP and edema.",
+      "**Avoid NSAIDs:** Stop all ibuprofen, naproxen, and high-dose aspirin.",
+      "**Protein Adjustment:** Limit protein (0.6-0.8 g/kg) in stages 3-5 (non-dialysis) to reduce workload; increase protein once on dialysis.",
+      "**Phosphorus Control:** Limit dairy, nuts, beans, colas, and processed foods if Phos is high.",
+      "**Potassium Control:** Limit bananas, potatoes, tomatoes, citrus if K+ is elevated.",
+      "**Fluid Management:** Restrict fluids only if edema/hyponatremia is present or on dialysis.",
+      "**Smoking Cessation:** Smoking drastically accelerates kidney function decline.",
+      "**Weight Management:** Obesity causes hyperfiltration injury; aim for BMI 20-25.",
+      "**Exercise:** 150 mins/week of moderate activity to control BP/Diabetes.",
+      "**BP Monitoring:** Regular home monitoring (Goal often < 130/80).",
+      "**Limit Alcohol:** Excessive alcohol raises BP.",
+      "**Avoid Herbal Supplements:** Many herbs (e.g., Aristolochia) are nephrotoxic or contain hidden potassium."
+    ],
+    "searchKeywords": [
+      "ckd",
+      "chronic kidney disease",
+      "renal failure",
+      "esrd",
+      "nephropathy"
+    ]
+  },
+  "ibs": {
+    "name": "Irritable Bowel Syndrome (IBS)",
+    "definition": "A functional gastrointestinal disorder characterized by chronic abdominal pain and altered bowel habits in the absence of organic disease.",
+    "overview": "IBS is a disorder of gut-brain interaction. It does not damage the bowel tissue or increase cancer risk, but significantly impacts quality of life. Diagnosis is often based on the Rome IV criteria: Recurrent abdominal pain (>1 day/week) associated with defecation or a change in stool frequency/form.",
+    "etiology": {
+      "summary": "Multifactorial 'Gut-Brain Axis' disorder.",
+      "primary": "Visceral hypersensitivity (lower pain threshold in gut), dysmotility (too fast or too slow), and psychological distress.",
+      "secondary": "Post-infectious (after gastroenteritis), alteration in gut microbiome (dysbiosis), food sensitivities (FODMAPs)."
+    },
+    "types": [
+      {
+        "name": "IBS-C (Constipation)",
+        "details": ">25% of stools are hard/lumpy and <25% are loose/watery."
+      },
+      {
+        "name": "IBS-D (Diarrhea)",
+        "details": ">25% of stools are loose/watery and <25% are hard/lumpy."
+      },
+      {
+        "name": "IBS-M (Mixed)",
+        "details": ">25% are hard/lumpy AND >25% are loose/watery (alternating)."
+      },
+      {
+        "name": "IBS-U (Unsubtyped)",
+        "details": "Meets diagnostic criteria for IBS but bowel habits don't fit C, D, or M."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Abdominal pain or cramping (often relieved by defecation)",
+      "Bloating and gas",
+      "Diarrhea, constipation, or alternating bouts",
+      "Mucus in the stool",
+      "Feeling of incomplete evacuation",
+      "Urgency to have a bowel movement"
+    ],
+    "pathophysiologySteps": [
+      "Disturbance in the Gut-Brain Axis leads to altered communication.",
+      "Visceral Hypersensitivity: Nerves in the gut become oversensitive to normal gas/distension.",
+      "Altered Motility: Colon muscle contracts too much (diarrhea) or too little (constipation).",
+      "Immune activation and low-grade inflammation may play a role.",
+      "Psychological stress triggers symptom flares via the enteric nervous system."
+    ],
+    "riskFactors": [
+      "Young age (< 50)",
+      "Female sex",
+      "Family history of IBS",
+      "History of anxiety, depression, or somatic symptom disorder",
+      "Recent severe GI infection (food poisoning)"
+    ],
+    "treatmentContraindications": [
+      "**Alosetron:** Contraindicated in constipation, ischemic colitis history (restricted program).",
+      "**Eluxadoline:** Contraindicated in patients without a gallbladder, history of pancreatitis, or heavy alcohol use.",
+      "**Loperamide:** Avoid in IBS-C or infectious diarrhea."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Antispasmodics",
+        "drugs": "Dicyclomine, Hyoscyamine",
+        "dosage": "10-20 mg QID PRN for pain/cramps"
+      },
+      {
+        "class": "Secretagogues (IBS-C)",
+        "drugs": "Linaclotide, Lubiprostone",
+        "dosage": "Daily to increase fluid in gut"
+      },
+      {
+        "class": "Mu-Opioid Agonist/Antagonist (IBS-D)",
+        "drugs": "Eluxadoline",
+        "dosage": "BID to reduce motility"
+      },
+      {
+        "class": "Antibiotic (Non-absorbable)",
+        "drugs": "Rifaximin",
+        "dosage": "550 mg TID for 14 days (IBS-D/Bloating)"
+      },
+      {
+        "class": "TCA Antidepressants",
+        "drugs": "Amitriptyline, Nortriptyline",
+        "dosage": "Low dose (10-25mg) at night for pain/diarrhea"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Low FODMAP Diet:** A temporary elimination diet (Fermentable Oligo-, Di-, Mono-saccharides And Polyols) followed by reintroduction to identify triggers.",
+      "**Food Diary:** Track food intake and symptoms to identify specific intolerances.",
+      "**Meal Hygiene:** Eat small, frequent meals; chew food thoroughly; do not skip meals.",
+      "**Fiber Management:** Soluble fiber (psyllium, oats) helps both C and D. Insoluble fiber (bran) may worsen bloating.",
+      "**Hydration:** Drink plenty of water; avoid carbonated beverages (gas).",
+      "**Limit Triggers:** Reduce caffeine, alcohol, spicy foods, and fatty foods.",
+      "**Gas Producers:** Avoid beans, cabbage, broccoli, cauliflower, and onions if bloating is an issue.",
+      "**Stress Management:** Yoga, meditation, and deep breathing can reduce gut-brain signaling flares.",
+      "**CBT:** Cognitive Behavioral Therapy is proven to reduce symptom severity.",
+      "**Exercise:** Regular physical activity helps regulate bowel contractions and reduces stress.",
+      "**Sleep:** Establish a regular sleep schedule.",
+      "**Probiotics:** A 4-week trial (e.g., Bifidobacterium infantis) may help bloating.",
+      "**Artificial Sweeteners:** Avoid sorbitol and xylitol (sugar alcohols cause diarrhea)."
+    ],
+    "searchKeywords": [
+      "ibs",
+      "irritable bowel",
+      "spastic colon",
+      "fodmap",
+      "functional bowel"
+    ]
+  },
+  "cad": {
+    "name": "Coronary Artery Disease (CAD)",
+    "definition": "A condition where the major blood vessels supplying the heart (coronary arteries) become damaged or diseased, usually due to plaque buildup (atherosclerosis).",
+    "overview": "CAD is the leading cause of death worldwide. Cholesterol-containing deposits (plaque) accumulate in coronary arteries, causing inflammation and narrowing. This restricts blood flow to the heart muscle, leading to chest pain (angina), shortness of breath, or heart attack (MI) if a plaque ruptures and clots.",
+    "etiology": {
+      "summary": "Atherosclerosis of the coronary arteries.",
+      "primary": "Endothelial injury caused by high cholesterol (LDL), hypertension, smoking, and diabetes leads to plaque formation.",
+      "secondary": "Vasospasm (Prinzmetal's), emboli, or vasculitis."
+    },
+    "types": [
+      {
+        "name": "Stable Ischemic Heart Disease",
+        "details": "Predictable chest pain during exertion/stress, relieved by rest/nitroglycerin."
+      },
+      {
+        "name": "Acute Coronary Syndrome (ACS)",
+        "details": "Unstable Angina, NSTEMI, or STEMI. Sudden plaque rupture/clot causing acute ischemia."
+      },
+      {
+        "name": "Vasospastic Angina (Prinzmetal's)",
+        "details": "Chest pain caused by coronary artery spasm, often at rest/night."
+      },
+      {
+        "name": "Microvascular Angina",
+        "details": "Disease of the tiny arteries; common in women/diabetics."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Angina (Chest pain, pressure, or tightness)",
+      "Pain radiating to shoulder, arm, neck, jaw, or back",
+      "Shortness of breath (Dyspnea)",
+      "Fatigue (especially in women)",
+      "Nausea / Indigestion (often confused with heartburn)",
+      "Sweating (Diaphoresis)",
+      "Dizziness"
+    ],
+    "pathophysiologySteps": [
+      "Endothelial damage allows LDL cholesterol to enter the vessel wall.",
+      "Macrophages engulf lipids, becoming 'foam cells' and forming fatty streaks.",
+      "Smooth muscle proliferation forms a fibrous cap over the lipid core (Plaque).",
+      "Plaque narrows the lumen (stenosis), reducing blood flow supply vs demand (Angina).",
+      "Plaque rupture exposes the core to blood, triggering platelet aggregation and thrombosis (Heart Attack)."
+    ],
+    "riskFactors": [
+      "Age (Men > 45, Women > 55)",
+      "High LDL Cholesterol / Low HDL",
+      "Hypertension",
+      "Smoking",
+      "Diabetes",
+      "Obesity",
+      "Family History of premature heart disease",
+      "Sedentary lifestyle"
+    ],
+    "treatmentContraindications": [
+      "**Nitrates:** Contraindicated with PDE5 inhibitors (Viagra/Cialis) -> Fatal hypotension.",
+      "**NSAIDs:** Avoid in CAD (except Aspirin). Increases risk of MI and HF.",
+      "**Beta-Blockers:** Caution in severe bradycardia, heart block, or decompensated HF."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Antiplatelets",
+        "drugs": "Aspirin, Clopidogrel",
+        "dosage": "Lifelong prevention of clots"
+      },
+      {
+        "class": "Statins (High Intensity)",
+        "drugs": "Atorvastatin, Rosuvastatin",
+        "dosage": "Stabilize plaque and lower LDL"
+      },
+      {
+        "class": "Beta-Blockers",
+        "drugs": "Metoprolol, Carvedilol",
+        "dosage": "Reduce heart rate and oxygen demand"
+      },
+      {
+        "class": "ACE Inhibitors",
+        "drugs": "Lisinopril",
+        "dosage": "Prevent remodeling"
+      },
+      {
+        "class": "Nitrates",
+        "drugs": "Nitroglycerin",
+        "dosage": "PRN for chest pain"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Heart-Healthy Diet:** Follow Mediterranean or DASH diet (fruits, veg, whole grains, nuts, fish).",
+      "**Saturated Fat:** Limit to < 6% of daily calories (avoid red meat, full-fat dairy).",
+      "**Trans Fat:** Eliminate completely (partially hydrogenated oils).",
+      "**Sodium:** Limit to < 1,500 mg/day to control BP.",
+      "**Aerobic Exercise:** 150 mins/week moderate (brisk walk) or 75 mins vigorous.",
+      "**Resistance Training:** 2 days/week to improve metabolism.",
+      "**Smoking Cessation:** The single most effective intervention. Risk drops 50% in 1 year.",
+      "**Weight Management:** Maintain BMI 18.5-24.9; waist circumference <40\" (men) / <35\" (women).",
+      "**Stress Management:** Chronic stress triggers inflammation. Use cardiac rehab/meditation.",
+      "**Alcohol:** Limit to max 1 drink/day (women) or 2 (men).",
+      "**BP Monitoring:** Keep BP < 130/80 mmHg.",
+      "**Lipid Management:** Adhere to statins; dietary fiber (oats) helps lower LDL.",
+      "**Vaccination:** Annual Flu shot (reduces MI risk) and Pneumococcal vaccine."
+    ],
+    "searchKeywords": [
+      "cad",
+      "coronary artery disease",
+      "angina",
+      "heart attack",
+      "ischemic heart disease",
+      "atherosclerosis"
+    ]
+  },
+  "osteoporosis": {
+    "name": "Osteoporosis",
+    "definition": "A systemic skeletal disease characterized by low bone mass and microarchitectural deterioration of bone tissue, leading to increased bone fragility and fracture risk.",
+    "overview": "Osteoporosis ('porous bone') is a silent disease until a fracture occurs. It most commonly affects postmenopausal women. Fractures typically occur in the hip, spine, and wrist. Management focuses on halting bone loss through pharmacotherapy and strict lifestyle adherence to prevent falls and strengthen bone.",
+    "etiology": {
+      "summary": "Imbalance between bone resorption (osteoclasts) and bone formation (osteoblasts).",
+      "primary": "Postmenopausal (Type 1) due to estrogen deficiency; Senile (Type 2) due to aging/calcium deficiency.",
+      "secondary": "Glucocorticoid use, Hyperparathyroidism, Hyperthyroidism, Celiac disease, Multiple Myeloma."
+    },
+    "types": [
+      {
+        "name": "Primary Type 1 (Postmenopausal)",
+        "details": "Rapid bone loss in first 5-7 years after menopause due to estrogen loss."
+      },
+      {
+        "name": "Primary Type 2 (Senile)",
+        "details": "Age-related (>70 years) due to decreased osteoblast function and calcium absorption."
+      },
+      {
+        "name": "Secondary Osteoporosis",
+        "details": "Caused by drugs (steroids, antiepileptics) or diseases (Cushing's, Malabsorption)."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Clinically silent (no pain) until fracture",
+      "Loss of height over time (> 1.5 inches)",
+      "Stooped posture (Kyphosis / Dowager's hump)",
+      "Back pain (caused by fractured/collapsed vertebra)",
+      "Bone fracture that occurs much more easily than expected (fragility fracture)"
+    ],
+    "pathophysiologySteps": [
+      "Bone remodeling is a constant cycle of resorption (breakdown) and formation.",
+      "Peak bone mass is achieved by age 30.",
+      "With aging/menopause, osteoclast activity exceeds osteoblast activity.",
+      "Trabecular bone (spongy inner bone) thins and loses connectivity.",
+      "Cortical bone (hard outer shell) becomes porous.",
+      "Structural integrity fails, leading to fractures under minimal stress."
+    ],
+    "riskFactors": [
+      "Age > 50",
+      "Female sex",
+      "White or Asian ethnicity",
+      "Low body weight / small frame",
+      "Family history of hip fracture",
+      "Early menopause",
+      "Long-term steroid use"
+    ],
+    "treatmentContraindications": [
+      "**Bisphosphonates:** Contraindicated in CrCl < 30-35, esophageal stricture/achalasia, or inability to sit upright for 30 mins.",
+      "**Teriparatide:** Contraindicated in Paget's disease, prior skeletal radiation, or bone metastasis (Osteosarcoma risk).",
+      "**Denosumab:** Contraindicated in uncorrected hypocalcemia."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Bisphosphonates (First-line)",
+        "drugs": "Alendronate, Risedronate, Zoledronic Acid",
+        "dosage": "Oral weekly or IV yearly"
+      },
+      {
+        "class": "RANK Ligand Inhibitor",
+        "drugs": "Denosumab",
+        "dosage": "60 mg SC every 6 months"
+      },
+      {
+        "class": "Anabolic Agents (Severe)",
+        "drugs": "Teriparatide, Abaloparatide",
+        "dosage": "Daily injection (Max 2 years)"
+      },
+      {
+        "class": "SERMs",
+        "drugs": "Raloxifene",
+        "dosage": "60 mg daily (Spine protection)"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Weight-Bearing Exercise:** Walking, jogging, dancing, or stair climbing (30 mins/day) triggers bone strengthening.",
+      "**Resistance Training:** Lifting weights or using resistance bands (2-3x/week) builds muscle to support bone.",
+      "**Balance Training:** Tai Chi or Yoga to improve stability and prevent falls.",
+      "**Calcium Intake:** Aim for 1,000-1,200 mg/day (Dietary sources like dairy/greens preferred over supplements).",
+      "**Vitamin D:** 800-1,000 IU/day to aid calcium absorption. Get 10-15 mins of sun exposure.",
+      "**Smoking Cessation:** Nicotine is directly toxic to osteoblasts; quitting reduces fracture risk.",
+      "**Limit Alcohol:** < 2 drinks/day (Excess alcohol depresses osteoblast activity and increases fall risk).",
+      "**Limit Caffeine:** Excess caffeine can increase calcium excretion.",
+      "**Fall-Proofing Home:** Remove throw rugs and electrical cords from walkways.",
+      "**Bathroom Safety:** Install grab bars and non-slip mats.",
+      "**Lighting:** Ensure hallways and stairwells are brightly lit (nightlights).",
+      "**Footwear:** Wear low-heeled, rubber-soled shoes for traction.",
+      "**Vision:** Annual eye exams to ensure vision issues don't cause trips.",
+      "**Hip Protectors:** Consider for frail elderly patients in nursing care."
+    ],
+    "searchKeywords": [
+      "osteoporosis",
+      "bone density",
+      "fracture",
+      "postmenopausal",
+      "dexa"
+    ]
+  },
+
+  "celiac": {
+    "name": "Celiac Disease",
+    "definition": "A serious autoimmune disease where the ingestion of gluten leads to damage in the small intestine.",
+    "overview": "When people with celiac disease eat gluten (a protein found in wheat, rye, and barley), their body mounts an immune response that attacks the small intestine. These attacks damage the villi, small fingerlike projections that line the small intestine, that promote nutrient absorption. When the villi get damaged, nutrients cannot be absorbed properly into the body.",
+    "etiology": {
+      "summary": "Immune reaction to gliadin (a gluten fraction) in genetically predisposed people.",
+      "primary": "Ingestion of Gluten triggers T-cell mediated destruction of enterocytes.",
+      "secondary": "Genetic requirement: Must carry HLA-DQ2 or HLA-DQ8 genes. Triggers may include viral infection, surgery, or pregnancy."
+    },
+    "types": [
+      {
+        "name": "Classical Celiac",
+        "details": "Signs of malabsorption: Diarrhea, steatorrhea (fatty stool), weight loss, and failure to thrive in children."
+      },
+      {
+        "name": "Non-Classical Celiac",
+        "details": "Mild GI symptoms but prominent extra-intestinal symptoms: Anemia, neuropathy, dental enamel defects, osteoporosis."
+      },
+      {
+        "name": "Silent Celiac",
+        "details": "Asymptomatic but positive serology and villous atrophy on biopsy. Discovered during screening."
+      },
+      {
+        "name": "Refractory Celiac",
+        "details": "Symptoms and damage persist despite strict gluten-free diet > 12 months. Rare and serious."
+      }
+    ],
+    "signsAndSymptoms": [
+      "Diarrhea (chronic, foul-smelling)",
+      "Bloating and gas",
+      "Fatigue",
+      "Weight loss",
+      "Iron-deficiency anemia (unexplained)",
+      "Dermatitis Herpetiformis (itchy, blistering skin rash)",
+      "Peripheral neuropathy (tingling feet)",
+      "Mouth ulcers",
+      "Brain fog"
+    ],
+    "pathophysiologySteps": [
+      "Gluten is ingested and broken down into gliadin peptides.",
+      "Gliadin crosses the intestinal epithelium (via increased permeability).",
+      "Tissue Transglutaminase (tTG) deamidates gliadin, increasing its immunogenicity.",
+      "Antigen Presenting Cells (HLA-DQ2/8) present gliadin to T-cells.",
+      "T-cells release inflammatory cytokines (IFN-gamma), causing mucosal damage.",
+      "B-cells produce antibodies (Anti-tTG, Anti-Endomysial).",
+      "Villous atrophy and crypt hyperplasia occur, leading to malabsorption."
+    ],
+    "riskFactors": [
+      "Family member with Celiac Disease",
+      "Type 1 Diabetes",
+      "Down Syndrome or Turner Syndrome",
+      "Autoimmune Thyroid Disease",
+      "Sjogren's Syndrome"
+    ],
+    "treatmentContraindications": [
+      "**Gluten:** Any intake is a contraindication to health. There is no 'safe' drug that allows gluten consumption yet.",
+      "**Wheat Starch:** Avoid unless certified gluten-free (processed to remove gluten).",
+      "**Beer:** Standard beer contains gluten."
+    ],
+    "standardTreatment": [
+      {
+        "class": "Dietary Therapy (The only cure)",
+        "drugs": "Strict Gluten-Free Diet (Lifelong)",
+        "dosage": "Zero tolerance for gluten"
+      },
+      {
+        "class": "Vitamin Supplementation",
+        "drugs": "Iron, B12, Folate, Vitamin D, Calcium",
+        "dosage": "To correct malabsorption deficiencies"
+      },
+      {
+        "class": "Steroids (Refractory)",
+        "drugs": "Budesonide, Prednisone",
+        "dosage": "For refractory disease to reduce inflammation"
+      },
+      {
+        "class": "Skin Treatment (Dermatitis Herpetiformis)",
+        "drugs": "Dapsone",
+        "dosage": "50-100 mg daily for rash control"
+      }
+    ],
+    "lifestyleModifications": [
+      "**Label Reading:** Must learn to identify hidden gluten (malt, brewer's yeast, hydrolyzed wheat protein, modified food starch).",
+      "**Cross-Contamination:** Use separate toasters, cutting boards, and colanders from gluten-eating family members.",
+      "**Kitchen Safety:** Flour dust can hang in the air for hours; do not bake with wheat flour in the same kitchen.",
+      "**Medication Check:** Check all pills/supplements. Gluten can be used as a binder/filler.",
+      "**Cosmetics:** Check lip balms and lipsticks for gluten (ingestion risk).",
+      "**Restaurant Dining:** Ask about dedicated fryers (fries often shared with breaded items) and prep surfaces.",
+      "**Oats:** Only eat oats labeled 'Certified Gluten-Free' (regular oats are contaminated in fields).",
+      "**Toothpaste/Mouthwash:** Verify gluten-free status.",
+      "**Play-Doh:** Contains wheat; wash hands after touching if caring for children.",
+      "**Communion Wafers:** Request low-gluten or gluten-free wafers.",
+      "**Bone Density:** Get a DEXA scan; osteoporosis is common due to calcium malabsorption.",
+      "**Vaccination:** Pneumococcal vaccine recommended (hyposplenism risk)."
+    ],
+    "searchKeywords": [
+      "celiac",
+      "gluten",
+      "sprue",
+      "villous atrophy",
+      "dermatitis herpetiformis"
+    ]
+  }
+}
+
